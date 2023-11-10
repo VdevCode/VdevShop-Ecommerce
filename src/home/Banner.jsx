@@ -9,7 +9,6 @@ const Title = (
   </h2>
 );
 const Desc = "Chúng tôi có những bộ sưu tập lớn";
-console.log(Title.name);
 
 const bannerList = [
   { iconName: "icofont-users-alt-4", text: "1,5 triệu khách hàng" },
