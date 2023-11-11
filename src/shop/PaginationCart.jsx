@@ -7,8 +7,8 @@ const PaginationCart = ({
   activePage,
 }) => {
   const pagenumbers = [];
-  for (let i = 0; i < Math.ceil(totalsProduct / productsPerPage); i++) {
-    pagenumbers.push(i + 1);
+  for (let i = 1; i <= Math.ceil(totalsProduct / productsPerPage); i++) {
+    pagenumbers.push(i);
   }
 
   return (
@@ -27,7 +27,7 @@ const PaginationCart = ({
       {pagenumbers.map((page) => (
         <li
           key={page}
-          className={`pageitem ${page === activePage ? "bg-warning" : ""}`}
+          className={`page-item ${page === activePage ? "bg-warning" : ""}`}
         >
           <button className="bg-transparent" onClick={() => paginate(page)}>
             {page}

@@ -27,7 +27,7 @@ const ProductCard = ({ GridList, products }) => {
                 <a href="#">
                         <i className="icofont-heart"></i>
                     </a>
-                <Link to={`/cart-page`}>
+                <Link to="/cart-page">
                 <i className="icofont-cart"></i>
                 </Link>
               </div>
@@ -55,7 +55,7 @@ const ProductCard = ({ GridList, products }) => {
                 <a href="#">
                         <i className="icofont-heart"></i>
                     </a>
-                <Link to={`/cart-page`}>
+                <Link to="/cart-page">
                 <i className="icofont-cart"></i>
                 </Link>
               </div>
@@ -67,7 +67,7 @@ const ProductCard = ({ GridList, products }) => {
                 <p className="productRating">
                     <Rating />
                 </p>
-                <h6 className="text-success">{`${item.price}.000 VND`}</h6>
+                <h6 className="text-success">{`${item.price}.000 VNĐ`}</h6>
             </div>
           </div>
         </div>

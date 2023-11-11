@@ -14,7 +14,7 @@ const ShopCategory = ({
       </div>
       <div className="">
         <button
-          className={`m-2 ${selectCategort} === "All" ? "bg-warning" : "`}
+          className={`m-2 ${selectCategort  === "All" ? "bg-warning" : "" }`}
         >
           All
         </button>
@@ -22,8 +22,8 @@ const ShopCategory = ({
           return (
             <button
               onClick={() => filerItems(item)}
-              className={`m-2 ${selectCategort} === ${item} ? "bg-warning" : ""`}
-              key={index}
+              className={`m-2 ${selectCategort  === item ? "bg-warning" : ""}`}
+              key={index} 
             >
               {item}
             </button>

@@ -1,0 +1,173 @@
+import React, { useState, useEffect } from "react";
+import PageHeader from "../components/PageHeader";
+import { Link } from "react-router-dom";
+import delImgUrl from "../assets/images/shop/del.png";
+
+const CartPage = () => {
+  const [cartItems, setCartItems] = useState([]);
+  useEffect(() => {
+    const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartItems(storedCartItems);
+    // Di chuyển dòng localStorage.setItem vào trong useEffect
+    localStorage.setItem("cart", JSON.stringify(storedCartItems));
+  }, []);
+
+  const calculateTotalPrice = (item) => {
+    return item.price * item.quantity;
+  };
+
+  const handleIncrease = (item) => {
+    item.quantity += 1;
+    setCartItems([...cartItems]);
+
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  };
+
+  const handleDescreate = (item) => {
+    if (item.quantity > 1) {
+      item.quantity -= 1;
+      setCartItems([...cartItems]);
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+    }
+  };
+
+  const handleRemove = (item) => {
+    const updateCart = cartItems.filter((cartItem) => cartItem.id !== item.id);
+
+    setCartItems(updateCart);
+    updateLocalStorage(updateCart);
+  };
+
+  const updateLocalStorage = (cart) => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
+
+  const cartSubTitle = cartItems.reduce(
+    (total, item) => total + calculateTotalPrice(item),
+    0
+  );
+
+  const orderTotal = cartSubTitle;
+
+  return (
+    <div className="" style={{ overflowX: "hidden" }}>
+      <PageHeader title="Giỏ hàng của bạn" curPage="Giỏ hàng" />
+      <div className="shop-cart padding-tb">
+        <div className="container">
+          <div className="section-wrapper">
+            {/* cart top */}
+            <div className="cart-top" style={{ overflowX: "scroll" }}>
+              <table className="" style={{ textAlign: "center" }}>
+                <thead>
+                  <tr>
+                    <th className="cart-product">Sản phẩm</th>
+                    <th className="cart-product">Tên</th>
+                    <th className="cart-price">Giá tiền</th>
+                    <th className="cart-quantity">Số lượng</th>
+                    <th className="cart-topprice">Tổng tiền</th>
+                    <th className="cart-edit">Chỉnh sửa</th>
+                  </tr>
+                </thead>
+                <tbody className="text-center ">
+                  {cartItems.map((item, index) => (
+                    <tr key={index} className="" style={{ fontSize: ".8rem" }}>
+                      <td className="product-item cat-product">
+                        <div className="p-thumb">
+                          <Link to={`/shop/${item.id}`}>
+                            <img src={item.img} />
+                          </Link>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="p-content">
+                          <Link to={`/shop/${item.id}`}>{item.name}</Link>
+                        </div>
+                      </td>
+                      <td className="cart-price">{item.price}.000VNĐ</td>
+                      <td className="cart-quantity">
+                        <div className="cart-plus-minus">
+                          <div
+                            className="dec qtybutton"
+                            onClick={() => handleDescreate(item)}
+                          >
+                            -
+                          </div>
+                          <input
+                            type="text"
+                            className="cart-plus-minus-box"
+                            name="qtybutton"
+                            value={item.quantity}
+                          />
+                          <div
+                            className="inc qtybutton"
+                            onClick={() => handleIncrease(item)}
+                          >
+                            +
+                          </div>
+                        </div>
+                      </td>
+                      <td className="cart-toprice">
+                        {calculateTotalPrice(item)}.000VNĐ
+                      </td>
+                      <td className="cart-edit">
+                        <a href="#" onClick={() => handleRemove(item)}>
+                          <img src={delImgUrl} />
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* cart bottom */}
+            <div className="cart-bottom">
+              <div className="cart-checkout-box">
+               <form className="coupon">
+               <input
+                  type="text"
+                  placeholder="Nhập voucher"
+                  name="coupon"
+                  className="cart-page-input-text"
+                  id="coupon"
+                />
+                <input type="submit" value="Áp dụng" />
+               </form>
+               <form className="cart-checkout align-items-center">
+                    <input className="" type="submit" value="Thanh toán"></input>
+                    <div>
+                        Thanh toán
+                    </div>
+               </form>
+              </div>
+              {/* box shopping */}
+              <div className="shiping-box">
+                    <div className="row">
+                        <div className="col-md-6 col-12">
+                            <div className="calculate-shiping">
+                                <h3>Nơi vận chuyển</h3>
+                                <div className="outline-select">
+                                    <select className="">
+                                        <option value="1">Tây Ninh</option>
+                                        <option value="2">TP.Hồ Chí Minh</option>
+                                        <option value="1">Hà Nội</option>
+                                        <option value="2">Bình Dương</option>
+                                    </select>
+                                    <span className="select-icon">
+                                        <i className="icofont-rounded-down"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-6 col-12">right</div>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CartPage;

@@ -5,6 +5,8 @@ import ProductCard from "./ProductCard";
 import PaginationCart from "./PaginationCart";
 import Search from "./Search";
 import ShopCategory from "./ShopCategory";
+import PopularPost from "./PopularPost";
+import Tags from "./Tags";
 
 const showResults = "Hiển thị 01 - 12 trong 139 kết quả";
 
@@ -88,6 +90,8 @@ const Shop = () => {
                   setProducts={setProducts}
                   selectCategort={selectCategort}
                 />
+                <PopularPost />
+                <Tags />
               </aside>
             </div>
           </div>
