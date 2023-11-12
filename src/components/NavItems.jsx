@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo/logo.png";
+import logo from "../assets/images/logo/logo1.jpg";
 
 const NavItems = () => {
   const [menuToggle, setMenuToggle] = React.useState(false);
@@ -14,6 +14,13 @@ const NavItems = () => {
       setHeaderFixed(false);
     }
   });
+
+  const handleClick = () => {
+    setMenuToggle(!menuToggle);
+    setTimeout(() => {
+      setMenuToggle(false);
+    }, 3000);
+  };
 
   return (
     <header
@@ -38,12 +45,12 @@ const NavItems = () => {
       {/* header-bottom */}
       <div className="header-bottom">
         <div className="container">
-          <div className="header-wrapper">
+          <div className="header-wrapper" style={{ padding: 0 }}>
             {/* logo */}
             <div className="logo-search-acte">
               <div className="logo">
                 <Link to="/">
-                  <img src={logo} alt="lab logo" />
+                  <img style={{ height: "70px" }} src={logo} alt="lab logo" />
                 </Link>
               </div>
             </div>
@@ -73,14 +80,16 @@ const NavItems = () => {
               <Link to="/signup" className="lab-btn me-3 d-none d-md-block">
                 Tạo tài khoản
               </Link>
-              <Link to="/signup" className="d-none d-md-block">
+              <Link to="/signin" className="d-none d-md-block">
                 Đăng nhập
               </Link>
 
               {/* menu-toggle */}
               <div
-                onClick={() => setMenuToggle(!menuToggle)}
-                className={`header-bar me-3 d-lg-none ${menuToggle ? "active" : ""}`}
+                onClick={handleClick}
+                className={`header-bar me-3 d-lg-none ${
+                  menuToggle ? "active" : ""
+                }`}
               >
                 <span></span>
                 <span></span>

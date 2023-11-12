@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import PageHeader from "../components/PageHeader";
 import { Link } from "react-router-dom";
 import delImgUrl from "../assets/images/shop/del.png";
+import CheckoutPage from "./CheckoutPage";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -123,44 +124,86 @@ const CartPage = () => {
             {/* cart bottom */}
             <div className="cart-bottom">
               <div className="cart-checkout-box">
-               <form className="coupon">
-               <input
-                  type="text"
-                  placeholder="Nhập voucher"
-                  name="coupon"
-                  className="cart-page-input-text"
-                  id="coupon"
-                />
-                <input type="submit" value="Áp dụng" />
-               </form>
-               <form className="cart-checkout align-items-center">
-                    <input className="" type="submit" value="Thanh toán"></input>
-                    <div>
-                        Thanh toán
-                    </div>
-               </form>
+                <form className="coupon">
+                  <input
+                    type="text"
+                    placeholder="Nhập voucher"
+                    name="coupon"
+                    className="cart-page-input-text"
+                    id="coupon"
+                  />
+                  <input type="submit" value="Áp dụng" />
+                </form>
+                <form className="cart-checkout align-items-center">
+                  <input className="" type="submit" value="Thanh toán ship code"></input>
+                  <div>
+                    <CheckoutPage />
+                  </div>
+                </form>
               </div>
               {/* box shopping */}
               <div className="shiping-box">
-                    <div className="row">
-                        <div className="col-md-6 col-12">
-                            <div className="calculate-shiping">
-                                <h3>Nơi vận chuyển</h3>
-                                <div className="outline-select">
-                                    <select className="">
-                                        <option value="1">Tây Ninh</option>
-                                        <option value="2">TP.Hồ Chí Minh</option>
-                                        <option value="1">Hà Nội</option>
-                                        <option value="2">Bình Dương</option>
-                                    </select>
-                                    <span className="select-icon">
-                                        <i className="icofont-rounded-down"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6 col-12">right</div>
+                <div className="row">
+                {/* left */}
+                  <div className="col-md-6 col-12">
+                    <div className="calculate-shiping">
+                      <h3>Nơi vận chuyển</h3>
+                      <div className="outline-select">
+                        <select className="">
+                          <option value="1">Tây Ninh</option>
+                          <option value="2">TP.Hồ Chí Minh</option>
+                          <option value="1">Hà Nội</option>
+                          <option value="2">Bình Dương</option>
+                        </select>
+                        <span className="select-icon">
+                          <i className="icofont-rounded-down"></i>
+                        </span>
+                      </div>
+
+                      <div className="outline-select shiping-select">
+                        <select className="">
+                          <option value="1">Huyện Dương Minh Châu</option>
+                          <option value="2">Huyện Hoà Thành</option>
+                          <option value="3">Huyện Chà Là</option>
+                          <option value="4">Huyện Trảng Bảng</option>
+                        </select>
+                        <span className="select-icon">
+                          <i className="icofont-rounded-down"></i>
+                        </span>
+                      </div>
+
+                      <input
+                        type="text"
+                        name="PostalCode"
+                        placeholder="Mã bưu điện
+"
+                        className="cart-page-input-text"
+                      />
+                      <button className="btn" type="submit">Cập nhật địa chỉ</button>
                     </div>
+                  </div>
+
+                  {/* right */}
+                  <div className="col-md-6 col-12">
+                        <div className="cart-overview">
+                            <h3>Tổng chi phí</h3>
+                            <ul className="lab-ul">
+                                <li>
+                                    <span className="pull-left">Tổng thanh toán</span>
+                                    <span className="pull-right">{cartSubTitle}.000VNĐ</span>
+                                </li>
+                                <li>
+                                    <span className="pull-left">Chi phí vận chuyển</span>
+                                    <span className="pull-right">Miễn phí</span>
+                                </li>
+                                <li>
+                                    <span className="pull-left">Thành tiền</span>
+                                    <span className="pull-right">{orderTotal.toFixed(3)}VNĐ</span>
+                                </li>
+                            </ul>
+                        </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

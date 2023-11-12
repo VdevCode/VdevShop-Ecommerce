@@ -506,7 +506,7 @@
 }
 
 .header-wrapper {
-    padding: 19px 0;
+    padding: 0px 0 !important;
     @extend %flex;
     @extend %justify-between;
     @extend %align-items-center;

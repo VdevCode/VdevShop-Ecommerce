@@ -7,30 +7,30 @@ const Title = "Bài post phổ biến"
 const postList = [
   {
     id: 1,
-    imgUrl: "/src/assets/images/blog/10.jpg",
+    imgUrl: '/src/assets/images/blog/01.jpg',
     imgAlt: "rajibraj91",
-    title: "Luôn vui cười mỗi ngày",
+    title: 'Vdevshop khai trương shop mọi sản phẩm',
     date: "Ngày 11 tháng 11 năm 2023",
   },
   {
     id: 2,
-    imgUrl: "/src/assets/images/blog/11.jpg",
+    imgUrl: '/src/assets/images/blog/02.jpg',
     imgAlt: "rajibraj91",
-    title: "Sản phẩm shopcart chất lượng không ?",
+    title: 'Chào đón Halloween, Fash Sale lên đến 50%.',
     date: "Ngày 4 tháng 11 năm 2023",
   },
   {
     id: 3,
-    imgUrl: "/src/assets/images/blog/12.jpg",
+    imgUrl: "/src/assets/images/blog/03.jpg",
     imgAlt: "rajibraj91",
-    title: "Từ Coder đến Developer",
+    title: "Mừng lễ Noel, Vdevshop quyết định Fash Sale",
     date: "Ngày 6 tháng 11 năm 2023",
   },
   {
     id: 4,
-    imgUrl: "/src/assets/images/blog/09.jpg",
+    imgUrl: "/src/assets/images/blog/04.jpg",
     imgAlt: "rajibraj91",
-    title: "Phỏng vấn intern web developer",
+    title: 'Tết Nguyên Đán 2024, Sale các mặt hàng giảm còn 80%',
     date: "Ngày 3 tháng 11 năm 2023",
   },
 ];
@@ -53,7 +53,7 @@ const PopularPost = () => {
                         </div>
                         <div className="post-content">
                             <Link to={`/blog/${post.id}`}>
-                                <h5>{post.title}</h5>
+                                <p><strong>{post.title}</strong></p>
                             </Link>
                             <span>{post.date}</span>
                         </div>
