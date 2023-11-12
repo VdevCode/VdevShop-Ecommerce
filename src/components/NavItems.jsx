@@ -35,7 +35,7 @@ const NavItems = () => {
             <Link to="/signup" className="lab-btn me-3">
               <span>Tạo tài khoản</span>
             </Link>
-            <Link to="/signin">
+            <Link to="/login">
               <span>Đăng nhập</span>
             </Link>
           </div>
