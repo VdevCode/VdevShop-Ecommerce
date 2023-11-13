@@ -7,40 +7,46 @@ const btnText = "Bắt đầu ngay bây giờ";
 
 const categoryList = [
   {
-    imgUrl: "src/assets/images/category/01.jpg",
+    imgUrl:
+      "https://lzd-img-global.slatic.net/g/p/22a68b3b73b428418899f7d02ba65a8c.jpg_720x720q80.jpg",
     imgAlt: "category rajibraj91 rajibraj",
     iconName: "icofont-brand-windows",
-    title: "Máy Ảnh DSLR",
+    title: "Món ăn vặt",
   },
   {
-    imgUrl: "src/assets/images/category/02.jpg",
+    imgUrl:
+      "https://laforce.vn/wp-content/uploads/2023/05/app-giup-phoi-do-cho-nam.jpg",
     imgAlt: "category rajibraj91 rajibraj",
     iconName: "icofont-brand-windows",
-    title: "Giày",
+    title: "Quần áo",
   },
   {
-    imgUrl: "src/assets/images/category/03.jpg",
+    imgUrl:
+      "https://phongvu.vn/cong-nghe/wp-content/uploads/2022/09/pc-choi-game-intel-core-i3.jpg",
     imgAlt: "category rajibraj91 rajibraj",
     iconName: "icofont-brand-windows",
-    title: "Nhiếp ảnh",
+    title: "Máy tính",
   },
   {
-    imgUrl: "src/assets/images/category/04.jpg",
+    imgUrl:
+      "https://vatvostudio.vn/wp-content/uploads/2023/07/15-pro-max-14-pro-max.jpg",
     imgAlt: "category rajibraj91 rajibraj",
     iconName: "icofont-brand-windows",
-    title: "Trang phục trang trọng",
+    title: "Điện thoại",
   },
   {
-    imgUrl: "src/assets/images/category/05.jpg",
+    imgUrl:
+      "https://media.mia.vn/uploads/tin-tuc/tui-xach-sieu-cap-2-1675189652.jpg",
     imgAlt: "category rajibraj91 rajibraj",
     iconName: "icofont-brand-windows",
-    title: "Túi đầy màu sắc",
+    title: "Túi sách",
   },
   {
-    imgUrl: "src/assets/images/category/06.jpg",
+    imgUrl:
+      "https://file.hstatic.net/200000355547/article/avt_ff9e142d308f4174bd1f034939324e26.jpg",
     imgAlt: "category rajibraj91 rajibraj",
     iconName: "icofont-brand-windows",
-    title: "Trang trí nội thất",
+    title: "Giày dép",
   },
 ];
 
@@ -48,7 +54,9 @@ const HomeCategory = () => {
   return (
     <div className="category-section style-4 padding-tb">
       <div className="section-header text-center">
-        <span className="subtitle">{subTitle}</span>
+        <span className="subtitle text-black">
+          <strong>{subTitle}</strong>
+        </span>
         <p>{title}</p>
       </div>
       <div className="section-wrapper">
@@ -57,16 +65,18 @@ const HomeCategory = () => {
             <div className="category-item" key={i}>
               <Link to={"/shop"} className="category-item">
                 <div className="category-inner">
-                {/* img thumnail */}
+                  {/* img thumnail */}
                   <div>
                     <img src={category.imgUrl} alt={category.imgAlt} />
                   </div>
-                {/* content */}
+                  {/* content */}
                   <div className="category-content">
                     <div className="cate-icon">
-                        <i className={`${category.iconName}`}></i>
+                      <i className={`${category.iconName}`}></i>
                     </div>
-                    <Link className="text-white" to={`/shop`} >{category.title}</Link>
+                    <Link className="text-white" to={`/shop`}>
+                      {category.title}
+                    </Link>
                   </div>
                 </div>
               </Link>
@@ -74,7 +84,9 @@ const HomeCategory = () => {
           ))}
         </div>
         <div className="text-center mt-5">
-            <Link to={`/shop`} className="lab-btn">{btnText}</Link>
+          <Link to={`/shop`} className="lab-btn">
+            {btnText}
+          </Link>
         </div>
       </div>
     </div>

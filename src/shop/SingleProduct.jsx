@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -19,10 +18,11 @@ const SingleProduct = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("/src/product/products.json")
+    fetch("/src/product/products.json") // Sử dụng đường dẫn tương đối
       .then((res) => res.json())
-      .then((data) => setProduct(data));
-  }, []);
+      .then((data) => setProduct(data))
+      .catch((error) => console.error("Error fetching JSON:", error));
+  }, [id]);
 
   const result = product.filter((val) => val.id === id);
   return (

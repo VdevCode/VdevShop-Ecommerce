@@ -1,14 +1,14 @@
 import React from "react";
-import productData from "../product/products.json";
+import productData from "/src/product/products.json";
 import { Link } from "react-router-dom";
 import SelectedCategory from "../components/SelectedCategory";
 
 const Title = (
   <h2 className="fs-2">
-    Tìm kiếm sản phẩm của bạn từ <span>hàng ngàn</span> sản phẩm
+    Tìm kiếm sản phẩm của bạn ngay thôi.
   </h2>
 );
-const Desc = "Chúng tôi có những bộ sưu tập lớn";
+const Desc = "Vdevshop hứa hẹn mang đến cho bạn trải nghiệm mua hàng tuyệt vời.";
 
 const bannerList = [
   { iconName: "icofont-users-alt-4", text: "1,5 triệu khách hàng" },

@@ -1,15 +1,15 @@
 import React from "react";
 
-const subTitle = "Tiết kiệm trong ngày";
+const subTitle = "Đăng ký tham gia";
 const Title = (
   <h2 className="text-white" style={{ fontSize: 20 }}>
-    Tham gia hội thảo miễn phí kéo dài một ngày để{" "}
-    <b style={{ color: "#ffdf40", fontWeight: 300 }}>Nâng cao</b>{" "}
-    <span>Thành thạo</span>
+    1 ngày trải nghiệm tại Vdevshop với những{" "}
+    <b style={{ color: "#ffdf40", fontWeight: 300 }}>Sản phẩm</b>{" "}
+    <span>chất lượng</span>
   </h2>
 );
 
-const des = "Ưu đãi thời gian có hạn. Nhanh lên!";
+const des = "Ưu đãi thời gian có hạn. Đăng ký ngay!";
 
 const Register = () => {
   return (
@@ -25,7 +25,7 @@ const Register = () => {
           </div>
           <div className="col">
             <div className="section-wrapper">
-              <h4>Đăng ký ngay</h4>
+              <h4>Đăng ký tham gia</h4>
               <form className="register-form">
                 <input
                   type="text"

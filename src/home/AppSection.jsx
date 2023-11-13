@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const btnText = "Đăng ký ngay"
-const Title = "Nhiều sản phẩm, miễn phí tận nơi"
+const Title = "Nhiều sản phẩm đa dạng, Freeship cho bạn luôn."
 const des = "Tận hưởng các chương trình khuyến mãi hấp dẫn, siêu tiết kiệm đến từ các Shop bán hàng uy tín nhất."
 
 const AppSection = () => {

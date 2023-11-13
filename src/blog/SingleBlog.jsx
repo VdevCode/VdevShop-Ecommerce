@@ -47,9 +47,9 @@ const SingleBlog = () => {
                                 <p>Cuộc sống chỉ có 1 lần, hãy mua hàng của Vdevshop ngay khi còn có thể.</p>
                                 <cite>{item.metaList[0].text}</cite>
                               </blockquote>
-                              <img src="/src/assets/images/blog/single/01.jpg" />
+                              <img src="https://document-export.canva.com/YPftU/DAFtjhYPftU/5/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20231112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231112T105517Z&X-Amz-Expires=52952&X-Amz-Signature=3f7d41fd111f0cd8db45c8ec71efc2500fb6ccedc2feaf8e61596903bf3b61ee&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2013%20Nov%202023%2001%3A37%3A49%20GMT" />
                               <div className="video-thumb">
-                                <img src="/src/assets/images/blog/single/02.jpg" />
+                                <img src="https://document-export.canva.com/RLtu0/DAFtjsRLtu0/2/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20231112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231112T173012Z&X-Amz-Expires=29089&X-Amz-Signature=240d6eca089b4947b8278473c9d78ea8e2e28da834fbfa00051751bc47ac259c&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2013%20Nov%202023%2001%3A35%3A01%20GMT" />
                               </div>
                             </div>
                           </div>

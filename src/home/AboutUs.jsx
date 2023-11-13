@@ -2,11 +2,11 @@ import React from "react";
 import CountUp from "react-countup";
 import { Link } from "react-router-dom";
 
-const subTitle = "Chất lượng hàng đầu";
-const title = "Trở thành một pro";
+const subTitle = "Khoá học marketing bán hàng";
+const title = "Trở thành một người bán hàng thành công";
 const desc =
-  "Tham gia các khóa học trên bất kỳ thiết bị nào của bạn với ứng dụng của chúng tôi và tìm hiểu tất cả về kinh doanh những gì bạn muốn. Chỉ cần tải xuống, cài đặt và bắt đầu tìm hiểu";
-const btnText = "Áp dụng ngay bây giờ";
+  "Xem thêm các khoá học marketing bán hàng";
+const btnText = "Đăng ký ngay";
 
 const countList = [
   {
@@ -62,7 +62,7 @@ const AboutUs = () => {
             </div>
             <div className="col">
               <div className="instructor-thumb">
-                <img src="/src/assets/images/instructor/01.jpeg" />
+                <img src="https://document-export.canva.com/bPG5M/DAFz7QbPG5M/2/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20231112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231112T194039Z&X-Amz-Expires=24763&X-Amz-Signature=c2f8478f976a5eef4f79a71fe1c87468a50308a672c56315cf74e8a77b55d34a&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2013%20Nov%202023%2002%3A33%3A22%20GMT" />
               </div>
             </div>
           </div>

@@ -1,46 +1,46 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const title = "Hơn 60.000 khách hàng";
+const title = "Hơn 1.000 khách hàng đã mua sản phẩm";
 
 const desc =
-  "Mua sản phẩm trên bất kỳ thiết bị nào của bạn bằng ứng dụng của chúng tôi và tận hưởng thời gian theo những gì bạn muốn. Chỉ cần tải xuống và cài đặt và bắt đầu mua sắm";
+  " mang đến trải nghiệm mua hàng tuyệt vời cho người dùng. Nhanh tay đăng ký ngay thôi.";
 
 const clientsList = [
   {
     imgUrl: "/src/assets/images/clients/avater.jpg",
     imgAlt: "education thumb rajibraj91 rajibraj",
-    text: "Join with Us",
+    text: "Tham gia",
   },
   {
     imgUrl: "/src/assets/images/clients/avater.jpg",
     imgAlt: "education thumb rajibraj91 rajibraj",
-    text: "Join with Us",
+    text: "Tham gia",
   },
   {
     imgUrl: "/src/assets/images/clients/avater.jpg",
     imgAlt: "education thumb rajibraj91 rajibraj",
-    text: "Join with Us",
+    text: "Tham gia",
   },
   {
     imgUrl: "/src/assets/images/clients/avater.jpg",
     imgAlt: "education thumb rajibraj91 rajibraj",
-    text: "Join with Us",
+    text: "Tham gia",
   },
   {
     imgUrl: "/src/assets/images/clients/avater.jpg",
     imgAlt: "education thumb rajibraj91 rajibraj",
-    text: "Join with Us",
+    text: "Tham gia",
   },
   {
     imgUrl: "/src/assets/images/clients/avater.jpg",
     imgAlt: "education thumb rajibraj91 rajibraj",
-    text: "Join with Us",
+    text: "Tham gia",
   },
   {
     imgUrl: "/src/assets/images/clients/avater.jpg",
     imgAlt: "education thumb rajibraj91 rajibraj",
-    text: "Join with Us",
+    text: "Tham gia",
   },
 ];
 

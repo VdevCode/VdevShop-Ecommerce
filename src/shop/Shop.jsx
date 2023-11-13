@@ -1,6 +1,6 @@
 import React from "react";
 import PageHeader from "../components/PageHeader";
-import DataProduct from "../product/products.json";
+import DataProduct from  "/src/product/products.json";
 import ProductCard from "./ProductCard";
 import PaginationCart from "./PaginationCart";
 import Search from "./Search";
