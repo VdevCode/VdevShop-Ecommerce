@@ -6,7 +6,8 @@ const title = "Sản phẩm";
 
 const ProductData = [
   {
-    imgUrl: "https://static.vinwonders.com/production/banh-trang-phoi-suong-Ha-Noi-6.jpg",
+    imgUrl:
+      "https://static.vinwonders.com/production/banh-trang-phoi-suong-Ha-Noi-6.jpg",
     cate: "Món ăn vặt",
     title: "Bánh tráng phơi sương",
     author: "https://img.ws.mms.shopee.vn/464239421c948394be3f9595b88c524a",
@@ -15,7 +16,8 @@ const ProductData = [
     id: 1,
   },
   {
-    imgUrl: "https://hanghieusales.com/wp-content/uploads/2023/03/6be90680a7b97ae723a8.jpg",
+    imgUrl:
+      "https://hanghieusales.com/wp-content/uploads/2023/03/6be90680a7b97ae723a8.jpg",
     cate: "Quần áo",
     title: "Áo thun nam Calvin Kelvin ",
     author: "assets/images/course/author/02.jpg",
@@ -24,7 +26,8 @@ const ProductData = [
     id: 2,
   },
   {
-    imgUrl: "https://www.netcost-security.fr/wp-content/uploads/2023/04/1681813207_iPhone-15-et-iPhone-15-Plus-seront-disponibles-dans-une.jpg",
+    imgUrl:
+      "https://www.netcost-security.fr/wp-content/uploads/2023/04/1681813207_iPhone-15-et-iPhone-15-Plus-seront-disponibles-dans-une.jpg",
     cate: "Điện thoại",
     title: "iPhone 15 Pro",
     author: "src/assets/images/categoryTab/brand/apple.png",
@@ -33,7 +36,8 @@ const ProductData = [
     id: 3,
   },
   {
-    imgUrl: "https://my-live-01.slatic.net/p/a1967d9e87b211dfa42cbdf9709c3bab.jpg",
+    imgUrl:
+      "https://my-live-01.slatic.net/p/a1967d9e87b211dfa42cbdf9709c3bab.jpg",
     cate: "Túi sách",
     title: "Túi GUCCI VANITY",
     author: "assets/images/course/author/04.jpg",
@@ -42,7 +46,8 @@ const ProductData = [
     id: 4,
   },
   {
-    imgUrl: "https://mitdecor.com/wp-content/uploads/2023/07/custom-giay-cung-mit-decor.jpg",
+    imgUrl:
+      "https://mitdecor.com/wp-content/uploads/2023/07/custom-giay-cung-mit-decor.jpg",
     cate: "Giày",
     title: "Giày thể thao ngoài trời",
     author: "assets/images/course/author/05.jpg",
@@ -51,7 +56,8 @@ const ProductData = [
     id: 5,
   },
   {
-    imgUrl: "https://i.pinimg.com/736x/5e/5b/34/5e5b346295c9ec6ab13dba8d1da86276.jpg",
+    imgUrl:
+      "https://i.pinimg.com/736x/5e/5b/34/5e5b346295c9ec6ab13dba8d1da86276.jpg",
     cate: "Sắc đẹp",
     title: "Mỹ phẩm COSRX Snail Mucin",
     author: "assets/images/course/author/06.jpg",
@@ -60,7 +66,8 @@ const ProductData = [
     id: 6,
   },
   {
-    imgUrl: "https://bizweb.dktcdn.net/100/419/649/products/z3426585741785-c38e091e67ea53b892e4202ee409ba2a.jpg?v=1661597828310",
+    imgUrl:
+      "https://bizweb.dktcdn.net/100/419/649/products/z3426585741785-c38e091e67ea53b892e4202ee409ba2a.jpg?v=1661597828310",
     cate: "Túi",
     title: "Túi xách Canvas",
     author: "assets/images/course/author/01.jpg",
@@ -69,7 +76,8 @@ const ProductData = [
     id: 7,
   },
   {
-    imgUrl: "https://bizweb.dktcdn.net/100/467/298/articles/anhbia-10-thuong-hieu-giay-viet-nam-duoc-ua-chuong-nhat-hien-nay.jpg?v=1665652007547",
+    imgUrl:
+      "https://bizweb.dktcdn.net/100/467/298/articles/anhbia-10-thuong-hieu-giay-viet-nam-duoc-ua-chuong-nhat-hien-nay.jpg?v=1665652007547",
     cate: "Giày",
     title: "Giày thể thao thông thường",
     author: "assets/images/course/author/02.jpg",
@@ -81,10 +89,12 @@ const ProductData = [
 
 const CategoryShowCase = () => {
   const [items, setItems] = React.useState(ProductData);
+  const [selectedCategory, setSelectedCategory] = React.useState("Tất cả");
 
   const filterItems = (cateItems) => {
-    const updateItems = ProductData.filter((items) => items.cate === cateItems);
-    setItems(updateItems)
+    const updateItems = ProductData.filter((item) => item.cate === cateItems);
+    setItems(updateItems);
+    setSelectedCategory(cateItems);
   };
 
   return (
@@ -100,10 +110,18 @@ const CategoryShowCase = () => {
       <div className="container">
         {/* section header  */}
         <div className="section-header">
-          <h2 className="fs-2">{title}</h2>
+          {/* <h2 className="fs-2">{title}</h2> */}
           <div className="course-filter-group">
             <ul className="lab-ul">
-              <li onClick={() => setItems(ProductData)}>Tất cả</li>
+              <li
+                onClick={() => {
+                  setItems(ProductData);
+                  setSelectedCategory("Tất cả");
+                }}
+                className={selectedCategory === "Tất cả" ? "active" : ""}
+              >
+                Tất cả
+              </li>
               <li onClick={() => filterItems("Giày")}>Giày</li>
               <li onClick={() => filterItems("Túi")}>Túi</li>
               <li onClick={() => filterItems("Điện thoại")}>Điện thoại</li>

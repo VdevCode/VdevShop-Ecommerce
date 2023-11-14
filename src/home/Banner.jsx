@@ -2,13 +2,11 @@ import React from "react";
 import productData from "/src/product/products.json";
 import { Link } from "react-router-dom";
 import SelectedCategory from "../components/SelectedCategory";
+import Sponsor from "./Sponsor";
 
-const Title = (
-  <h2 className="fs-2">
-    Tìm kiếm sản phẩm của bạn ngay thôi.
-  </h2>
-);
-const Desc = "Vdevshop hứa hẹn mang đến cho bạn trải nghiệm mua hàng tuyệt vời.";
+const Title = <h2 className="fs-2">VDEVSHOP</h2>;
+const Desc =
+  "Vdevshop hứa hẹn mang đến cho bạn trải nghiệm mua hàng tuyệt vời.";
 
 const bannerList = [
   { iconName: "icofont-users-alt-4", text: "1,5 triệu khách hàng" },
@@ -18,17 +16,27 @@ const bannerList = [
 
 const Banner = () => {
   const [searchInput, setSearchInput] = React.useState("");
-  const [filteredProduct, setFilteredProduct] = React.useState(productData);
-
+  const [filteredProduct, setFilteredProduct] = React.useState(
+    productData.product
+  );
   const handleSearch = (e) => {
     const searchTerm = e.target.value;
     setSearchInput(searchTerm);
+  
+    if (!searchTerm) {
+      setFilteredProduct(productData.product);
+    } else {
+      const filtered = productData.product.filter((product) =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredProduct(filtered);
+    }
+  };
+  
 
-    const filtered = productData.filter((product) =>
-      product.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredProduct(filtered);
-    console.log(setFilteredProduct(filtered));
+  const handleSearchBtn = (e) => {
+    e.preventDefault();
+    setSearchInput(searchInput);
   };
 
   return (
@@ -46,22 +54,25 @@ const Banner = () => {
               placeholder="Tìm kiếm sản phẩm của bạn"
               onChange={handleSearch}
             />
-            <button type="submit" className="ml-4">
-              <i className="icofont-search"></i>
+            <button type="submit" className="ml-4" onClick={handleSearchBtn}>
+              <i className="icofont-search" style={{ marginLeft: "100%" }}></i>
             </button>
           </form>
 
-          <p className="text-center mt-4 ">{Desc}</p>
+          <p className="text-center mt-4 " style={{ fontSize: "14px" }}>
+            {Desc}
+          </p>
           <ul className="lab-ul">
             {searchInput &&
               filteredProduct.map((product, i) => (
-                <li key={i}>
+                <li key={i} className="" style={{ backgroundColor: "#ffc107" }}>
                   <Link to={`/shop/${product.id}`}>{product.name}</Link>
                 </li>
               ))}
           </ul>
         </div>
       </div>
+      <Sponsor />
     </div>
   );
 };

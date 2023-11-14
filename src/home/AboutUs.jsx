@@ -60,11 +60,11 @@ const AboutUs = () => {
                     <Link to="" className="lab-btn">{btnText}</Link>
                 </div>
             </div>
-            <div className="col">
+            {/* <div className="col">
               <div className="instructor-thumb">
                 <img src="https://document-export.canva.com/bPG5M/DAFz7QbPG5M/2/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20231112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231112T194039Z&X-Amz-Expires=24763&X-Amz-Signature=c2f8478f976a5eef4f79a71fe1c87468a50308a672c56315cf74e8a77b55d34a&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2013%20Nov%202023%2002%3A33%3A22%20GMT" />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

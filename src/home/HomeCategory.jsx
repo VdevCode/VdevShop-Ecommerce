@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const subTitle = "Chọn bất kỳ sản phẩm bạn thích";
-const title = "Mua mọi thứ với chúng tôi";
+const title = "Mua mọi thứ tại cửa hàng Vdevshop";
 const btnText = "Bắt đầu ngay bây giờ";
 
 const categoryList = [
@@ -10,14 +10,14 @@ const categoryList = [
     imgUrl:
       "https://lzd-img-global.slatic.net/g/p/22a68b3b73b428418899f7d02ba65a8c.jpg_720x720q80.jpg",
     imgAlt: "category rajibraj91 rajibraj",
-    iconName: "icofont-brand-windows",
+    iconName: "icofont-fast-food",
     title: "Món ăn vặt",
   },
   {
     imgUrl:
       "https://laforce.vn/wp-content/uploads/2023/05/app-giup-phoi-do-cho-nam.jpg",
     imgAlt: "category rajibraj91 rajibraj",
-    iconName: "icofont-brand-windows",
+    iconName: "icofont-baby-cloth",
     title: "Quần áo",
   },
   {
@@ -38,7 +38,7 @@ const categoryList = [
     imgUrl:
       "https://media.mia.vn/uploads/tin-tuc/tui-xach-sieu-cap-2-1675189652.jpg",
     imgAlt: "category rajibraj91 rajibraj",
-    iconName: "icofont-brand-windows",
+    iconName: "icofont-school-bag",
     title: "Túi sách",
   },
   {
@@ -55,7 +55,7 @@ const HomeCategory = () => {
     <div className="category-section style-4 padding-tb">
       <div className="section-header text-center">
         <span className="subtitle text-black">
-          <strong>{subTitle}</strong>
+          {/* <strong>{subTitle}</strong> */}
         </span>
         <p>{title}</p>
       </div>

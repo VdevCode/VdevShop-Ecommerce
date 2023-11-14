@@ -18,12 +18,12 @@ const AppSection = () => {
                 <ul className='lab-ul'>
                     <li>
                         <a href='#'>
-                            <img src='/src/assets/images/app/01.jpg' />
+                            <img style={{height:"150px"}} src='https://kissenglishcenter.com/wp-content/uploads/2022/05/tu%CC%9B%CC%80-vu%CC%9B%CC%A3ng-thu%CC%9Bo%CC%9B%CC%80ng-du%CC%80ng-khi-vie%CC%82%CC%81t-doa%CC%A3n-va%CC%86n-tie%CC%82%CC%81ng-anh-ve%CC%82%CC%80-shopping-1024x1024.jpg' />
                         </a>
                     </li>
                     <li>
                         <a href='#'>
-                            <img src='/src/assets/images/app/02.jpg' />
+                            <img style={{height:"150px"}} src='https://omisell.com/vi-vn/wp-content/uploads/sites/2/2021/09/tao-gian-hang-shopee-1.jpg' />
                         </a>
                     </li>
                 </ul>

@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo/logo1.jpg";
+import { AuthContext } from "../context/AuthProvider";
+import { Modal } from "react-bootstrap"; // Import Modal from react-bootstrap
+
 
 const NavItems = () => {
+  const { user, logout} = useContext(AuthContext);
   const [menuToggle, setMenuToggle] = React.useState(false);
   const [socialToggle, setSocialToggle] = React.useState(false);
   const [headerFixed, setHeaderFixed] = React.useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   window.addEventListener("scroll", function () {
     if (window.scrollY > 200) {
@@ -22,6 +27,14 @@ const NavItems = () => {
     }, 3000);
   };
 
+  const handleModalShow = () => {
+    setShowModal(true);
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
   return (
     <header
       className={`header-section style-4 ${
@@ -31,13 +44,41 @@ const NavItems = () => {
       {/* header-top */}
       <div className={`header-top d-md-none ${socialToggle ? "open" : ""}`}>
         <div className="container">
-          <div className="header-top-area">
-            <Link to="/signup" className="lab-btn me-3">
-              <span>Tạo tài khoản</span>
-            </Link>
-            <Link to="/login">
-              <span>Đăng nhập</span>
-            </Link>
+          <div className="header-top-area justify-content-between">
+            {user ? (
+              <>
+                <button
+                  className="btn-login"
+                  style={{
+                    background: "red",
+                    padding: "4px 8px",
+                    color: "white",
+                  }}
+                  onClick={logout}
+                >
+                  Đăng xuất
+                </button>
+                {/* Hiển thị thông tin người dùng */}
+                {user.email && <span>{user.email}</span>}
+              </>
+            ) : (
+              <>
+                <Link
+                  to="/signup"
+                  className=" me-3"
+                  style={{
+                    background: "#ffdf40",
+                    padding: "4px 8px",
+                    color: "black",
+                  }}
+                >
+                  <span>Tạo tài khoản</span>
+                </Link>
+                <Link to="/login">
+                  <span>Đăng nhập</span>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -77,12 +118,33 @@ const NavItems = () => {
               </div>
 
               {/* login va signin */}
-              <Link to="/signup" className="lab-btn me-3 d-none d-md-block">
-                Tạo tài khoản
-              </Link>
-              <Link to="/signin" className="d-none d-md-block">
-                Đăng nhập
-              </Link>
+              {user ? (
+                <>
+                  {/* Hiển thị menu đăng nhập */}
+                  <Link
+                    to="/signup"
+                    className=" me-3 d-none d-md-block"
+                    style={{
+                      background: "#ffdf40",
+                      padding: "4px 8px",
+                      color: "black",
+                    }}
+                  >
+                    Tạo tài khoản
+                  </Link>
+                  <Link
+                    to="/signin"
+                    className="d-none d-md-block"
+                    style={{
+                      background: "red",
+                      padding: "4px 8px",
+                      color: "white",
+                    }}
+                  >
+                    Đăng nhập
+                  </Link>
+                </>
+              ) : null}
 
               {/* menu-toggle */}
               <div
@@ -102,12 +164,42 @@ const NavItems = () => {
                   setSocialToggle(!socialToggle);
                 }}
               >
-                <i className="icofont-user"></i>
+                {user ? (
+                  user.photoURL ? (
+                    <img
+                      src={user.photoURL}
+                      alt={user.displayName || user.email}
+                      style={{
+                        width: "30px",
+                        height: "30px",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  ) : (
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/8792/8792047.png"
+                      style={{
+                        width: "30px",
+                        height: "30px",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  )
+                ) : (
+                  <i className="icofont-user"></i>
+                )}
               </div>
+              
+              
             </div>
+            {/* modal */}
+            
+
+
           </div>
         </div>
       </div>
+      
     </header>
   );
 };

@@ -8,37 +8,37 @@ const desc =
 
 const clientsList = [
   {
-    imgUrl: "/src/assets/images/clients/avater.jpg",
+    imgUrl: "https://upload.wikimedia.org/wikipedia/vi/c/c1/Nh%C3%A2n_v%E1%BA%ADt_v%E1%BA%BD_theo_phong_c%C3%A1ch_anime_-_manga_%C4%91%C6%B0%E1%BB%A3c_t%E1%BA%A1o_t%E1%BB%B1_%C4%91%E1%BB%99ng_b%E1%BB%9Fi_AI_%282%29.jpeg",
     imgAlt: "education thumb rajibraj91 rajibraj",
     text: "Tham gia",
   },
   {
-    imgUrl: "/src/assets/images/clients/avater.jpg",
+    imgUrl: "https://hoanghamobile.com/tin-tuc/wp-content/uploads/2023/08/Hinh-nen-anime-cute-8-1.jpg",
     imgAlt: "education thumb rajibraj91 rajibraj",
     text: "Tham gia",
   },
   {
-    imgUrl: "/src/assets/images/clients/avater.jpg",
+    imgUrl: "https://ngoaingutomato.edu.vn/Data/images/hinh-anh-co-gai-cute-anime.jpeg",
     imgAlt: "education thumb rajibraj91 rajibraj",
     text: "Tham gia",
   },
   {
-    imgUrl: "/src/assets/images/clients/avater.jpg",
+    imgUrl: "https://kenh14cdn.com/thumb_w/660/203336854389633024/2023/1/5/photo-20-16728916028822010149407.png",
     imgAlt: "education thumb rajibraj91 rajibraj",
     text: "Tham gia",
   },
   {
-    imgUrl: "/src/assets/images/clients/avater.jpg",
+    imgUrl: "https://yt3.googleusercontent.com/ytc/APkrFKYnBseY0RPaE2EC4j-AjVKefYeQh4dQjYk8XxCe0g=s900-c-k-c0x00ffffff-no-rj",
     imgAlt: "education thumb rajibraj91 rajibraj",
     text: "Tham gia",
   },
   {
-    imgUrl: "/src/assets/images/clients/avater.jpg",
+    imgUrl: "https://xwatch.vn/upload_images/images/2023/03/10/4-anh-anime-doraemon.jpg",
     imgAlt: "education thumb rajibraj91 rajibraj",
     text: "Tham gia",
   },
   {
-    imgUrl: "/src/assets/images/clients/avater.jpg",
+    imgUrl: "https://i.pinimg.com/1200x/a2/98/16/a29816cd63e5d731cc70cfd3f88c2ce8.jpg",
     imgAlt: "education thumb rajibraj91 rajibraj",
     text: "Tham gia",
   },

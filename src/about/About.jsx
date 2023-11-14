@@ -11,19 +11,19 @@ const expareance = "Vừa khai trương";
 
 const aboutList = [
   {
-    imgUrl: "/src/assets/images/about/icon/01.jpg",
+    imgUrl: "https://amis.misa.vn/wp-content/uploads/2021/07/giai-doan-tu-van.jpg",
     imgAlt: "about icon rajibraj91 rajibraj",
     title: "Bộ phận tư vấn khách hàng",
     desc: "Chuyên môn và kĩ năng cao, vào khẳng vấn đề chính để phục vụ khách.",
   },
   {
-    imgUrl: "/src/assets/images/about/icon/02.jpg",
+    imgUrl: "https://lh4.googleusercontent.com/YUHmD0GAqy7pMIkLYYCo4sG0yimbvUEwh8El6hFPd87KFTj3hNjiJqk9_rgIT0LmB_hIkGYQ1egXyIhCKzkLHUH3aiwWt_jfEmmv6DwUUa10pS2wzA50Dsxvc84LpAjUObUeZrCD",
     imgAlt: "about icon rajibraj91 rajibraj",
     title: "Danh hiệu của shop",
     desc: "Mới khai trương nên chưa có, có lẽ sắp tới làm thêm về tiktok với youtube",
   },
   {
-    imgUrl: "/src/assets/images/about/icon/03.jpg",
+    imgUrl: "https://cdn.vietnambiz.vn/2019/9/4/4613564984-15675998684692104562758.jpg",
     imgAlt: "about icon rajibraj91 rajibraj",
     title: "Chất lượng sản phẩm",
     desc: "Bao chất lượng, do Vdevshop luôn chọn lọc kĩ trước khi nhập nên hàng Tàu không lọt vào được.",
@@ -39,7 +39,7 @@ const About = () => {
             <div className="col">
               <div className="about-left">
                 <div className="about-thumb">
-                  <img src="/src/assets/images/about/01.jpg" alt="about" />
+                  <img src="https://document-export.canva.com/C5JaI/DAFz7IC5JaI/2/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20231112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231112T204622Z&X-Amz-Expires=43497&X-Amz-Signature=93e3a894ee14db242aea5507813332553974c5ad922915fe20127cfd4c87a003&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2013%20Nov%202023%2008%3A51%3A19%20GMT" alt="about" />
                 </div>
                 <div className="abs-thumb">
                   <img src="/src/assets/images/about/01.png" alt="about" />

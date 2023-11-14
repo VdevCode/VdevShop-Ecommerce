@@ -11,25 +11,25 @@ const btnText = "Xác nhận";
 
 const contactList = [
   {
-    imgUrl: "/src/assets/images/icon/01.png",
+    imgUrl: "https://thanhdatmoves.com/wp-content/uploads/2020/07/icon-dia-chi.png",
     imgAlt: "contact icon",
     title: "Địa chỉ văn phòng   ",
     desc: "Tổ 20, Ấp Ninh Phú, Xã Bàu Năng, Huyện DMC, Tỉnh Tây Ninh",
   },
   {
-    imgUrl: "/src/assets/images/icon/02.png",
+    imgUrl: "https://laptopngapham.com/wp-content/uploads/2019/03/so-dien-thoai-lien-he-ho-tro-cua-google-tai-vietnam.png",
     imgAlt: "contact icon",
     title: "Số điện thoại",
     desc: "+84 353 421 697",
   },
   {
-    imgUrl: "/src/assets/images/icon/03.png",
+    imgUrl: "https://cdn0.iconfinder.com/data/icons/communication-cool-vector-2/128/69-512.png",
     imgAlt: "contact icon",
     title: "Gửi email",
     desc: "admin@vdevshop.com",
   },
   {
-    imgUrl: "/src/assets/images/icon/04.png",
+    imgUrl: "https://breadnotcircuses.org/wp-content/uploads/2022/11/website-la-gi.webp",
     imgAlt: "contact icon",
     title: "Website của chúng tôi",
     desc: "www.vdevshop.com",

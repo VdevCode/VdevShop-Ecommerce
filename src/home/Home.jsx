@@ -18,7 +18,7 @@ const Home = () => {
       <LocationSprade />
       <AboutUs />
       <AppSection />
-      <Sponsor />
+      {/* <Sponsor /> */}
     </div>
 
   );

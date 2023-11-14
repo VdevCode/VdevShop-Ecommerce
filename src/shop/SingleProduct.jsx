@@ -14,17 +14,17 @@ import PopularPost from "./PopularPost";
 const storeTitle = "cửa hàng / ";
 
 const SingleProduct = () => {
-  const [product, setProduct] = useState([]);
+  const [products, setProduct] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("/src/product/products.json") // Sử dụng đường dẫn tương đối
+    fetch("https://rnmnwz-3000.csb.app/product") // Sử dụng đường dẫn tương đối
       .then((res) => res.json())
       .then((data) => setProduct(data))
       .catch((error) => console.error("Error fetching JSON:", error));
   }, [id]);
 
-  const result = product.filter((val) => val.id === id);
+  const result = products.filter((val) => val.id === id);
   return (
     <div className="">
       <PageHeader

@@ -8,12 +8,11 @@ import ShopCategory from "./ShopCategory";
 import PopularPost from "./PopularPost";
 import Tags from "./Tags";
 
-const showResults = "Hiển thị 01 - 12 trong 139 kết quả";
+const showResults = `Hiển thị 01 - 12 trong ${DataProduct.product.length} sản phẩm`;
 
 const Shop = () => {
   const [GridList, setGridList] = React.useState(true);
-  const [products, setProducts] = React.useState(DataProduct);
-
+  const [products, setProducts] = React.useState(DataProduct.product || []);
   //pagination
   const [currentPage, setCurrentPage] = React.useState(1);
   const productsPerPage = 12;
@@ -30,10 +29,10 @@ const Shop = () => {
   };
 
   const [selectCategort, setSelectCategort] = React.useState("All");
-  const menuItems = [...new Set(DataProduct.map((val) => val.category))];
+  const menuItems = [...new Set(products.map((val) => val.category))];
 
   const filerItems = (curcat) => {
-    const newItems = DataProduct.filter((newVal) => {
+    const newItems = products.filter((newVal) => {
       return newVal.category === curcat;
     });
     setSelectCategort(curcat);

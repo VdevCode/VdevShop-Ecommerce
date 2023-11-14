@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Rating from "../components/Rating.jsx"
+import Rating from "../components/Rating.jsx";
 
 const ProductCard = ({ GridList, products }) => {
   const ProductList = products;
@@ -13,33 +13,32 @@ const ProductCard = ({ GridList, products }) => {
       }`}
     >
       {ProductList.map((item, index) => (
-        <div className={`col-lg-4 col-md-6 col-12 g-4`} key={index}>
-          <div className="product-item">
+        <div className={`container col-lg-4 col-md-6 col-12 g-4`} key={index}>
+          <div className="product-item col`">
             <div className="product-thumb">
               <div className="pro-thumb">
-                <img src={item.img} alt={`Product ${index}`} />
+                <img  src={item.img} alt={`Product ${index}`} />
               </div>
               <div className="product-action-link">
                 <Link to={`/shop/${item.id}`}>
-                    <i className="icofont-eye"></i>
-                 
+                  <i className="icofont-eye"></i>
                 </Link>
                 <a href="#">
-                        <i className="icofont-heart"></i>
-                    </a>
+                  <i className="icofont-heart"></i>
+                </a>
                 <Link to="/cart-page">
-                <i className="icofont-cart"></i>
+                  <i className="icofont-cart"></i>
                 </Link>
               </div>
             </div>
             <div className="product-content">
-                <h5>
-                    <Link to={`/shop/${item.id}`}>{item.name}</Link>
-                </h5>
-                <p className="productRating">
-                    <Rating />
-                </p>
-                <h6 className="text-success">{`${item.price}.000 VND`}</h6>
+              <h5>
+                <Link to={`/shop/${item.id}`}>{item.name}</Link>
+              </h5>
+              <p className="productRating">
+                Đánh giá: <Rating />
+              </p>
+              <h6 className="text-success">{`Giá: ${item.price}.000 VND`}</h6>
             </div>
           </div>
           <div className="product-list-item">
@@ -49,25 +48,24 @@ const ProductCard = ({ GridList, products }) => {
               </div>
               <div className="product-action-link">
                 <Link to={`/shop/${item.id}`}>
-                    <i className="icofont-eye"></i>
-                 
+                  <i className="icofont-eye"></i>
                 </Link>
                 <a href="#">
-                        <i className="icofont-heart"></i>
-                    </a>
+                  <i className="icofont-heart"></i>
+                </a>
                 <Link to="/cart-page">
-                <i className="icofont-cart"></i>
+                  <i className="icofont-cart"></i>
                 </Link>
               </div>
             </div>
             <div className="product-content">
-                <h5 className="">
-                    <Link to={`/shop/${item.id}`}>{item.name}</Link>
-                </h5>
-                <p className="productRating">
-                    <Rating />
-                </p>
-                <h6 className="text-success">{`${item.price}.000 VNĐ`}</h6>
+              <h5 className="">
+                <Link to={`/shop/${item.id}`}>{item.name}</Link>
+              </h5>
+              <p className="productRating">
+                Đánh giá: <Rating />
+              </p>
+              <h6 className="text-success">{`Giá: ${item.price}.000 VND`}</h6>
             </div>
           </div>
         </div>
