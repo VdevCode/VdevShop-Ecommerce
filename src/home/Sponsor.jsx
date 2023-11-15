@@ -32,18 +32,18 @@ const Sponsor = () => {
     <div className="sponsor-section section-bg" style={{padding: "10px 0", background: "none"}}>
       <div className="container">
         <div className="section-wrapper">
-          <div className="sponsor-slider">
+          <div className="sponsor-slider" style={{marginTop: "30px"}}>
             <Swiper
               slidesPerView={2}
-              spaceBetween={20}
+              spaceBetween={15}
               loop={true}
               autoplay={{
                 delay: 1200,
                 disableOnInteraction: false,
               }}
               breakpoints={{
-                640: {
-                  slidesPerView: 2,
+                400: {
+                  slidesPerView: 3,
                   spaceBetween: 20,
                 },
                 768: {

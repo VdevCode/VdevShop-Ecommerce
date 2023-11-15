@@ -21,9 +21,9 @@ const postList = [
   },
   {
     id: 3,
-    imgUrl: 'https://document-export.canva.com/kAZQQ/DAFz7FkAZQQ/2/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20231112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231112T024442Z&X-Amz-Expires=82186&X-Amz-Signature=3c199ca966240dd233408eb7e9cf17f5a21345e3b0726dc5f2619a2caa80adee&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2013%20Nov%202023%2001%3A34%3A28%20GMT',
+    imgUrl: 'https://images.hindustantimes.com/img/2022/12/23/550x309/merry_christmas_2022_1671778807710_1671778827251_1671778827251.jpg',
     imgAlt: "rajibraj91",
-    title: "Mừng lễ Noel, Vdevshop quyết định Fash Sale",
+    title: "Mừng lễ Noel, Vdevshop quyết định Fash Sale",
     date: "Ngày 6 tháng 11 năm 2023",
   },
   {

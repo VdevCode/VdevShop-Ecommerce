@@ -1,6 +1,7 @@
 import React from "react";
 import Rating from "../components/Rating";
 import { Link } from "react-router-dom";
+import "../responsive/responsive.css";
 
 const title = "Sản phẩm";
 
@@ -12,7 +13,7 @@ const ProductData = [
     title: "Bánh tráng phơi sương",
     author: "https://img.ws.mms.shopee.vn/464239421c948394be3f9595b88c524a",
     brand: "Ơ Diêng Store",
-    price: "169.000",
+    price: "169.000 VND",
     id: 1,
   },
   {
@@ -131,13 +132,13 @@ const CategoryShowCase = () => {
         </div>
         {/* section body */}
         <div className="section-wrapper">
-          <div className="row g-4 justify-content-center mx-auto row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1">
+          <div className="row g-4 check-res justify-content-center mx-auto row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1">
             {items.map((item) => (
               <div className="col" key={item.id}>
                 <div className="course-item style-4">
                   <div className="course-inner">
                     <div className="course-thumb">
-                      <img src={`${item.imgUrl}`} />
+                      <img className="check-img" src={`${item.imgUrl}`} />
                       <div className="course-category">
                         <div className="course-cate">
                           <a href="#">{item.cate}</a>
@@ -149,12 +150,12 @@ const CategoryShowCase = () => {
                     </div>
                     <div className="course-content">
                       <Link to={`/shop/${item.id}`}>{item.title}</Link>
-                      <div className="course-footer">
+                      <div className="course-footer pb-2">
                         <div className="course-author">
-                          <Link className="ca-name">{item.brand}</Link>
+                          <Link className="ca-name"  style={{fontSize: "15px"}} >{item.brand}</Link>
                         </div>
-                        <div className="course-price">
-                          <Link to={`/shop/${item.id}`}>{item.price}</Link>
+                        <div className="course-price" style={{lineHeight: "0"}}>
+                          <Link style={{fontSize: "15px"}} to={`/shop/${item.id}`}>{item.price}</Link>
                         </div>
                       </div>
                     </div>

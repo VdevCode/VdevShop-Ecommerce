@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../responsive/responsive.css";
 
 const subTitle = "Chọn bất kỳ sản phẩm bạn thích";
 const title = "Mua mọi thứ tại cửa hàng Vdevshop";
@@ -52,7 +53,7 @@ const categoryList = [
 
 const HomeCategory = () => {
   return (
-    <div className="category-section style-4 padding-tb">
+    <div className="category-section style-4 ">
       <div className="section-header text-center">
         <span className="subtitle text-black">
           {/* <strong>{subTitle}</strong> */}
@@ -60,14 +61,14 @@ const HomeCategory = () => {
         <p>{title}</p>
       </div>
       <div className="section-wrapper">
-        <div className="row mx-auto g-4 justify-content-center row-cols-1 row-cols-md-3 row-cols-sm-2">
+        <div className="row mx-auto g-4 check-res justify-content-center row-cols-1 row-cols-md-3 row-cols-sm-2">
           {categoryList.map((category, i) => (
             <div className="category-item" key={i}>
               <Link to={"/shop"} className="category-item">
                 <div className="category-inner">
                   {/* img thumnail */}
                   <div>
-                    <img src={category.imgUrl} alt={category.imgAlt} />
+                    <img className="check-img" src={category.imgUrl} alt={category.imgAlt} />
                   </div>
                   {/* content */}
                   <div className="category-content">
@@ -84,7 +85,7 @@ const HomeCategory = () => {
           ))}
         </div>
         <div className="text-center mt-5">
-          <Link to={`/shop`} className="lab-btn">
+          <Link to={`/shop`} className="" style={{padding:"8px 8px", backgroundColor:"#ffdf40", color:"black"}}>
             {btnText}
           </Link>
         </div>

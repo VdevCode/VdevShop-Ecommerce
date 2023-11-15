@@ -3,6 +3,7 @@ import Rating from "../components/Rating.jsx";
 
 const reviewTitle = "Đăng bài đánh giá";
 
+
 let ReviewList = [
   {
     imgUrl: "https://mcdn.coolmate.me/image/June2023/anime-meme-cuc-hai-huoc-2083_602.jpg",
@@ -33,7 +34,7 @@ let ReviewList = [
     desc: "Shop này luôn cố gắng để đem đến cho tui sự hài lòng. thanks shop nhá",
   },
 ];
-const Review = () => {
+const Review = ({item}) => {
   const [reviewShow, setReviewShow] = useState(true);
   const handleShow = (e) => {
     // setReviewShow(!reviewShow)
@@ -127,10 +128,9 @@ const Review = () => {
         </div>
         <div className="description">
           <p>
-            Mô tả sản phẩm của Shop là những thông tin giới thiệu đặc tính chất
-            lượng, chức năng, lợi ích… của một sản phẩm được đăng tải trên shop
-            cart nhằm mang đến cho Người Mua các thông tin đầy đủ về sản phẩm để
-            họ có cơ sở lựa chọn khi Mua hàng của bạn.
+            {
+              item.desc
+            }
           </p>
           <div className="post-item">
             <div className="post-thumb">

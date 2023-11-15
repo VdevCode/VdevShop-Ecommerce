@@ -10,7 +10,7 @@ const AppSection = () => {
     <div className='app-section padding-tb'>
         <div className='container'>
             <div className='section-header text-center'>
-                <Link to="/sign-up" className="lab-btn mb-4">{btnText}</Link>
+                <Link to="#" className="lab-btn mb-4">{btnText}</Link>
                 <h2>{Title}</h2>
                 <p>{des}</p>
             </div>

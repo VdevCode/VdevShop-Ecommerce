@@ -18,7 +18,7 @@ const Register = () => {
         <div className="row align-items-center mx-auto justify-content-center g-4 row-cols-1 row-cols-lg-2">
           <div className="col">
             <div className="section-header">
-              <span className="subtitle">{subTitle}</span>
+              {/* <span className="subtitle">{subTitle}</span> */}
               <p className="text-white">{Title}</p>
               <p>{des}</p>
             </div>

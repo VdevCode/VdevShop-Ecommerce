@@ -98,53 +98,55 @@ const NavItems = () => {
             {/* menu */}
             <div className="menu-area">
               <div className="menu">
-                <ul className={`lab-ul ${menuToggle ? "active" : ""}`}>
-                  <li>
-                    <Link to="/">Trang chủ</Link>
+                <ul className={`lab-ul ${menuToggle ? "active" : ""}`} style={{color: "black", fontWeight:300}}>
+                  <li >
+                    <Link style={{color: "black", fontWeight:400}} to="/">Trang chủ</Link>
                   </li>
                   <li>
-                    <Link to="/shop">Shop</Link>
+                    <Link style={{color: "black", fontWeight:400}} to="/shop">Sản phẩm</Link>
                   </li>
                   <li>
-                    <Link to="/blog">Blog</Link>
+                    <Link style={{color: "black", fontWeight:400}} to="/blog">Blog</Link>
                   </li>
                   <li>
-                    <Link to="/about">Về chúng tôi</Link>
+                    <Link style={{color: "black", fontWeight:400}} to="/about">Về chúng tôi</Link>
                   </li>
                   <li>
-                    <Link to="/contact">Liên hệ</Link>
+                    <Link style={{color: "black", fontWeight:400}} to="/contact">Liên hệ</Link>
                   </li>
                 </ul>
               </div>
 
               {/* login va signin */}
-              {user ? (
+              {user && window.innerWidth > 991 ? (
                 <>
                   {/* Hiển thị menu đăng nhập */}
-                  <Link
-                    to="/signup"
-                    className=" me-3 d-none d-md-block"
-                    style={{
-                      background: "#ffdf40",
-                      padding: "4px 8px",
-                      color: "black",
-                    }}
-                  >
-                    Tạo tài khoản
-                  </Link>
-                  <Link
-                    to="/signin"
-                    className="d-none d-md-block"
-                    style={{
-                      background: "red",
-                      padding: "4px 8px",
-                      color: "white",
-                    }}
-                  >
-                    Đăng nhập
-                  </Link>
+                  {
+                    user.photoURL ? (
+                      <img
+                      src={user.photoURL}
+                      alt={user.displayName || user.email}
+                      style={{
+                        width: "30px",
+                        height: "30px",
+                        borderRadius: "50%",
+                      }}
+                    />
+                    ):(
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/8792/8792047.png"
+                      style={{
+                        width: "30px",
+                        height: "30px",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  )
+                  }
                 </>
-              ) : null}
+              ) : (
+                  null
+                )}
 
               {/* menu-toggle */}
               <div

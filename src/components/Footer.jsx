@@ -1,11 +1,11 @@
 import React from "react";
 
-const title = "Về ShopCart";
+const title = "Về Vdevshop";
 const desc =
-  "Tận hưởng các chương trình khuyến mãi hấp dẫn, siêu tiết kiệm đến từ các Shop bán hàng uy tín nhất.";
+  "Tận hưởng các chương trình khuyến mãi hấp dẫn, siêu tiết kiệm đến từ Shop bán hàng uy tín nhất.";
 const ItemTitle = "Thể loại";
-const quickTitle = "đường dẫn nhanh";
-const tweetTitle = "Tweets gần đây";
+const quickTitle = "Link";
+const tweetTitle = "Bài đăng Facebook gần đây";
 
 const addressList = [
   {
@@ -18,7 +18,7 @@ const addressList = [
   },
   {
     iconName: "icofont-envelope",
-    text: "vdevcode@shopcart.com",
+    text: "vdevshop@shopcart.com",
   },
 ];
 
@@ -106,21 +106,19 @@ const quickList = [
 
 const tweetList = [
   {
-    iconName: "icofont-twitter",
+    iconName: "icofont-facebook",
     desc: (
       <p>
-        Vdevcode <a href="#">@ShopCart Greetings! #HTML_Template</a> Grab
-        your item, 50% Big Sale Offer !!
+        Vdevshop <a href="#">Giảm giá nhận dịp lễ Halloween</a> Flash sale lên đến 50% !!
       </p>
     ),
   },
   {
-    iconName: "icofont-twitter",
+    iconName: "icofont-facebook",
     desc: (
       <p>
-        Vdevcode <a href="#">@ShopCart Hey! #HTML_Template</a> Grab your
-        item, 50% Big Sale Offer !!
-      </p>
+      Vdevshop <a href="#">Giảm giá nhận dịp lễ Noel</a> Flash sale lên đến 20% !!
+    </p>
     ),
   },
 ];

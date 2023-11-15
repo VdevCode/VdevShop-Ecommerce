@@ -1,0 +1,11 @@
+@media screen and (max-width: 568px) {
+    .check-res{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .check-img{
+        width: 100%;
+        height: 200px;
+    }
+    
+}

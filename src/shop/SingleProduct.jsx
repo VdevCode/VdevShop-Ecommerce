@@ -85,7 +85,11 @@ const SingleProduct = () => {
                   </div>
                 </div>
                 <div className="review">
-                  <Review />
+                {
+                  result.map((item) => (
+                    <Review key={item.id} item={item} />
+                  ))
+                }
                 </div>
               </article>
             </div>
