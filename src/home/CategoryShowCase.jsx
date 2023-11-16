@@ -149,7 +149,7 @@ const CategoryShowCase = () => {
                       </div>
                     </div>
                     <div className="course-content">
-                      <Link to={`/shop/${item.id}`}>{item.title}</Link>
+                      <Link to={`/shop/${item.id}`} className="line-clamp">{item.title}</Link>
                       <div className="course-footer pb-2">
                         <div className="course-author">
                           <Link className="ca-name"  style={{fontSize: "15px"}} >{item.brand}</Link>

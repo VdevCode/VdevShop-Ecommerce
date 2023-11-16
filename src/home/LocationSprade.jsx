@@ -62,7 +62,7 @@ const LocationSprade = () => {
                   <span>{clients.text}</span>
                 </Link>
                 <div className="client-thumb">
-                    <img src={clients.imgUrl} alt={clients.imgAlt} />
+                    <img style={{height: "30px", width: "30px",}}  src={clients.imgUrl} alt={clients.imgAlt} />
                 </div>
               </div>
             ))}

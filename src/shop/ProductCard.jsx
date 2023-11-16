@@ -59,7 +59,7 @@ const ProductCard = ({ GridList, products }) => {
                   height: window.innerWidth <= 568 ? "200px" : "auto",
                 }}
               >
-                <img src={item.img} alt={`Product ${index}`} />
+                <img src={item.img} className="check-img" alt={`Product ${index}`} />
               </div>
               <div className="product-action-link">
                 <Link to={`/shop/${item.id}`}>
@@ -73,9 +73,9 @@ const ProductCard = ({ GridList, products }) => {
                 </Link>
               </div>
             </div>
-            <div className="product-content text-font">
+            <div className="product-content">
               <h5 className="">
-                <Link style={{ textTransform: 'capitalize'}} to={`/shop/${item.id}`}>{item.name}</Link>
+                <Link style={{ textTransform: 'capitalize'}} className="line-clamp " to={`/shop/${item.id}`}>{item.name}</Link>
               </h5>
               <p className="productRating">
                 Đánh giá: <Rating />

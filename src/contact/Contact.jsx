@@ -27,13 +27,7 @@ const contactList = [
     imgAlt: "contact icon",
     title: "Gửi email",
     desc: "admin@vdevshop.com",
-  },
-  {
-    imgUrl: "https://breadnotcircuses.org/wp-content/uploads/2022/11/website-la-gi.webp",
-    imgAlt: "contact icon",
-    title: "Website của chúng tôi",
-    desc: "www.vdevshop.com",
-  },
+  }
 ];
 
 const Contact = () => {
@@ -55,7 +49,7 @@ const Contact = () => {
                             contactList.map((item, i) => (
                                 <div className="contact-item" key={i}>
                                     <div className="contact-thumb">
-                                        <img src={item.imgUrl} alt={item.imgAlt} />
+                                        <img style={{height:"30px",}} src={item.imgUrl} alt={item.imgAlt} />
                                     </div>
                                     <div className="contact-content">
                                         <h6>{item.title}</h6>

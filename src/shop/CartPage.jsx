@@ -356,7 +356,7 @@ const CartPage = () => {
                         className="cart-page-input-text"
                       />
                       <button className="btn" type="submit">
-                        Cập nhật địa chỉ
+                        Lưu địa chỉ
                       </button>
                     </div>
                   </div>
