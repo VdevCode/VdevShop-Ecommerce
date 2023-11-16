@@ -43,8 +43,12 @@ const Sponsor = () => {
               }}
               breakpoints={{
                 400: {
-                  slidesPerView: 3,
+                  slidesPerView:2,
                   spaceBetween: 20,
+                },
+                568: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
                 },
                 768: {
                   slidesPerView: 4,
@@ -63,7 +67,7 @@ const Sponsor = () => {
                 <SwiperSlide key={index}>
                   <div className="sponsor-item">
                     <div className="sponsor-thumb">
-                      <img src={`${item.imgUrl}`} style={{height: "100px",borderRadius: "10px"}} />
+                      <img src={`${item.imgUrl}`} style={{height: "135px",borderRadius: "10px"}} />
                     </div>
                   </div>
                 </SwiperSlide>

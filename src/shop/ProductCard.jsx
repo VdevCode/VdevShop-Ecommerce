@@ -43,12 +43,12 @@ const ProductCard = ({ GridList, products }) => {
             </div>
             <div className="product-content">
               <p>
-                <strong><Link style={{ textTransform: 'capitalize'}} to={`/shop/${item.id}`}>{item.name}</Link></strong>
+                <strong><Link style={{ textTransform: 'capitalize'}} className="line-clamp" to={`/shop/${item.id}`}>{item.name}</Link></strong>
               </p>
               <p className="productRating">
                 Đánh giá: <Rating />
               </p>
-              <h6 className="text-success">{`Giá: ${item.price}.000 VND`}</h6>
+              <h6 className="text-font">{`Giá: ${item.price}.000 VND`}</h6>
             </div>
           </div>
           <div className="product-list-item">
@@ -73,14 +73,14 @@ const ProductCard = ({ GridList, products }) => {
                 </Link>
               </div>
             </div>
-            <div className="product-content">
+            <div className="product-content text-font">
               <h5 className="">
                 <Link style={{ textTransform: 'capitalize'}} to={`/shop/${item.id}`}>{item.name}</Link>
               </h5>
               <p className="productRating">
                 Đánh giá: <Rating />
               </p>
-              <h6 className="text-success">{`Giá: ${item.price}.000 VND`}</h6>
+              <p className="text-font">{`Giá: ${item.price}.000 VND`}</p>
             </div>
           </div>
         </div>

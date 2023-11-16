@@ -85,7 +85,7 @@ const blogList = [
       "https://document-export.canva.com/VtRI4/DAFz7BVtRI4/2/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20231112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231112T170737Z&X-Amz-Expires=31493&X-Amz-Signature=aa71fae9db31a7cb8149a347184794214d9d4f1ef2d8a1106b96f00a091e5234&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2013%20Nov%202023%2001%3A52%3A30%20GMT",
     imgAlt: "Blog Thumb",
     title: "Cập nhật voucher vẫn còn dùng được của shop",
-    desc: "Shop mời các bạn khi mua hàng có thể nhập mã này nhé",
+    desc: "Shop mời các bạn khi mua hàng có thể nhập mã này nhé: halloween, vdevshop, christmas, newyear, myphamsale.",
     commentCount: "3",
     btnText: "Đọc thêm",
     metaList: [

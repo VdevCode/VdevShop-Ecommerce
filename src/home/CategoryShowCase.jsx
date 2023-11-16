@@ -155,7 +155,7 @@ const CategoryShowCase = () => {
                           <Link className="ca-name"  style={{fontSize: "15px"}} >{item.brand}</Link>
                         </div>
                         <div className="course-price" style={{lineHeight: "0"}}>
-                          <Link style={{fontSize: "15px"}} to={`/shop/${item.id}`}>{item.price}</Link>
+                          <Link className="line-clamp" style={{fontSize: "15px",padding: "10px 5px",background: "rgba(255,223,64,.85)"}}  to={`/shop/${item.id}`}>{item.price}</Link>
                         </div>
                       </div>
                     </div>

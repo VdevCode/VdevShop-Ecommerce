@@ -6,35 +6,162 @@ import CheckoutPage from "./CheckoutPage";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
+  const [voucher, setVoucher] = useState("");
+  const [usedVouchers, setUsedVouchers] = useState([]);
+  const [orderTotal, setOrderTotal] = useState(0);
+  const [provinces, setProvinces] = useState([]);
+  // const [district, setDistrict] = useState([]);
+  const [selectedProvince, setSelectedProvince] = useState("");
+  const [selectedDistrict, setSelectedDistrict] = useState("");
+  const [districtsByProvince, setDistrictsByProvince] = useState([]);
+  const [selectedWard, setSelectedWard] = useState("");
+  const [wardsByDistrict, setWardsByDistrict] = useState([]);
+
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(storedCartItems);
-    // Di chuyển dòng localStorage.setItem vào trong useEffect
     localStorage.setItem("cart", JSON.stringify(storedCartItems));
   }, []);
+
+  useEffect(() => {
+    fetch("https://vapi.vnappmob.com/api/province/")
+      .then((res) => res.json())
+      .then((data) => setProvinces(data))
+      .catch(() => {
+        console.error("Lỗi fetch api provinces:");
+      });
+  }, []);
+
+
+  useEffect(() => {
+    if (selectedProvince) {
+      fetch(
+        `https://vapi.vnappmob.com/api/province/district/${selectedProvince}`
+      )
+        .then((res) => res.json())
+        .then((data) => setDistrictsByProvince(data))
+        .catch(() => {
+          console.error("Lỗi fetch api disctrict:");
+        });
+    }
+  }, [selectedProvince]);
+
+
+  useEffect(() => {
+    if (selectedProvince && selectedDistrict) {
+      fetch(`https://vapi.vnappmob.com/api/province/ward/${selectedDistrict}`)
+        .then((res) => res.json())
+        .then((data) => setWardsByDistrict(data))
+        .catch(() => {
+          console.error("Lỗi fetch api ward:");
+        });
+    }
+  }, [selectedProvince, selectedDistrict]);
+
+  const handleProvincesChange = (e) => {
+    const selectedValue = e.target.value;
+    setSelectedProvince(selectedValue);
+    setSelectedDistrict(""); // Reset selected district when province changes
+
+    // Fetch districts by province ID
+    fetch(`https://vapi.vnappmob.com/api/province/district/${selectedValue}`)
+      .then((res) => res.json())
+      .then((data) => setDistrictsByProvince(data))
+      .catch(() => {
+        console.error("Lỗi fetch api disctrict:");
+      });
+  };
+
+  const handleDistrictChange = (e) => {
+    const selectedValue = e.target.value;
+    setSelectedDistrict(selectedValue);
+    setSelectedWard(""); // Reset selected ward when district changes
+
+    // Fetch wards by district ID
+    fetch(`https://vapi.vnappmob.com/api/province/ward/${selectedValue}`)
+      .then((res) => res.json())
+      .then((data) => setWardsByDistrict(data))
+      .catch(() => {
+        console.error("Lỗi fetch api ward:");
+      });
+  };
+
+  const handleWardChange = (e) => {
+    const selectedValue = e.target.value;
+    setSelectedWard(selectedValue);
+  };
+  // const handleVoucherChange = (e) => {
+  //   setVoucher(e.target.value);
+  // };
+
+  const handleVoucherSubmit = (e) => {
+    e.preventDefault();
+
+    if (usedVouchers.includes(voucher)) {
+      alert("Bạn đã nhập voucher này rồi!");
+      return;
+    }
+
+    let discountPercent = 0;
+    let discountAmount = 0;
+
+    switch (voucher) {
+      case "halloween":
+        discountPercent = 50;
+        break;
+      case "christmas":
+        discountPercent = 30;
+        break;
+      case "newyear":
+        discountPercent = 50;
+        break;
+      case "vdevshop":
+        discountPercent = 20;
+        break;
+      case "myphamsale":
+        discountPercent = 30;
+        break;
+      default:
+        alert("Voucher không hợp lệ");
+        return;
+    }
+
+    discountAmount = (cartSubTitle() * discountPercent) / 100;
+
+    alert(`Nhập thành công, giá được giảm ${discountPercent}%`);
+    setUsedVouchers([...usedVouchers, voucher]);
+
+    const updatedOrderTotal = cartSubTitle() - discountAmount;
+    setOrderTotal(updatedOrderTotal.toFixed(3));
+  };
 
   const calculateTotalPrice = (item) => {
     return item.price * item.quantity;
   };
 
+  const cartSubTitle = () => {
+    return cartItems.reduce(
+      (total, item) => total + calculateTotalPrice(item),
+      0
+    );
+  };
+
   const handleIncrease = (item) => {
     item.quantity += 1;
     setCartItems([...cartItems]);
-
-    localStorage.setItem("cart", JSON.stringify(cartItems));
+    updateLocalStorage([...cartItems]);
   };
 
   const handleDescreate = (item) => {
     if (item.quantity > 1) {
       item.quantity -= 1;
       setCartItems([...cartItems]);
-      localStorage.setItem("cart", JSON.stringify(cartItems));
+      updateLocalStorage([...cartItems]);
     }
   };
 
   const handleRemove = (item) => {
     const updateCart = cartItems.filter((cartItem) => cartItem.id !== item.id);
-
     setCartItems(updateCart);
     updateLocalStorage(updateCart);
   };
@@ -42,13 +169,6 @@ const CartPage = () => {
   const updateLocalStorage = (cart) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   };
-
-  const cartSubTitle = cartItems.reduce(
-    (total, item) => total + calculateTotalPrice(item),
-    0
-  );
-
-  const orderTotal = cartSubTitle;
 
   return (
     <div className="" style={{ overflowX: "hidden" }}>
@@ -75,7 +195,7 @@ const CartPage = () => {
                       <td className="product-item cat-product">
                         <div className="p-thumb">
                           <Link to={`/shop/${item.id}`}>
-                            <img src={item.img} />
+                            <img src={item.img} alt={item.name} />
                           </Link>
                         </div>
                       </td>
@@ -112,7 +232,7 @@ const CartPage = () => {
                       </td>
                       <td className="cart-edit">
                         <a href="#" onClick={() => handleRemove(item)}>
-                          <img src={delImgUrl} />
+                          <img src={delImgUrl} alt="Delete" />
                         </a>
                       </td>
                     </tr>
@@ -131,11 +251,33 @@ const CartPage = () => {
                     name="coupon"
                     className="cart-page-input-text"
                     id="coupon"
+                    value={voucher}
+                    onChange={(e) => {
+                      setVoucher(e.target.value);
+                    }}
                   />
-                  <input type="submit" value="Áp dụng" />
+                  <button
+                    className=""
+                    style={{
+                      width: "100%",
+                      fontSize: "1rem",
+                      backgroundColor: "#f16126",
+                      color: "white",
+                      padding: "4px 10px",
+                      border: "none",
+                    }}
+                    type="submit"
+                    onClick={handleVoucherSubmit}
+                  >
+                    Áp dụng
+                  </button>
                 </form>
                 <form className="cart-checkout align-items-center">
-                  <input className="" type="submit" value="Thanh toán ship code"></input>
+                  <input
+                    className=""
+                    type="submit"
+                    value="Thanh toán ship code"
+                  />
                   <div>
                     <CheckoutPage />
                   </div>
@@ -144,16 +286,25 @@ const CartPage = () => {
               {/* box shopping */}
               <div className="shiping-box">
                 <div className="row">
-                {/* left */}
+                  {/* left */}
                   <div className="col-md-6 col-12">
                     <div className="calculate-shiping">
                       <h3>Nơi vận chuyển</h3>
                       <div className="outline-select">
-                        <select className="">
-                          <option value="1">Tây Ninh</option>
-                          <option value="2">TP.Hồ Chí Minh</option>
-                          <option value="1">Hà Nội</option>
-                          <option value="2">Bình Dương</option>
+                        <select
+                          className=""
+                          onChange={handleProvincesChange}
+                          value={selectedProvince}
+                        >
+                          {Array.isArray(provinces.results) &&
+                            provinces.results.map((item) => (
+                              <option
+                                key={item.province_id}
+                                value={item.province_id}
+                              >
+                                {item.province_name}
+                              </option>
+                            ))}
                         </select>
                         <span className="select-icon">
                           <i className="icofont-rounded-down"></i>
@@ -161,11 +312,37 @@ const CartPage = () => {
                       </div>
 
                       <div className="outline-select shiping-select">
-                        <select className="">
-                          <option value="1">Huyện Dương Minh Châu</option>
-                          <option value="2">Huyện Hoà Thành</option>
-                          <option value="3">Huyện Chà Là</option>
-                          <option value="4">Huyện Trảng Bảng</option>
+                        <select
+                          className=""
+                          onChange={handleDistrictChange}
+                          value={selectedDistrict}
+                        >
+                          {Array.isArray(districtsByProvince.results) &&
+                            districtsByProvince.results.map((item) => (
+                              <option
+                                key={item.district_id}
+                                value={item.district_id}
+                              >
+                                {item.district_name}
+                              </option>
+                            ))}
+                        </select>
+                        <span className="select-icon">
+                          <i className="icofont-rounded-down"></i>
+                        </span>
+                      </div>
+                      <div className="outline-select shiping-select">
+                        <select
+                          className=""
+                          onChange={handleWardChange}
+                          value={selectedWard}
+                        >
+                          {Array.isArray(wardsByDistrict.results) &&
+                            wardsByDistrict.results.map((item) => (
+                              <option key={item.ward_id} value={item.ward_id}>
+                                {item.ward_name}
+                              </option>
+                            ))}
                         </select>
                         <span className="select-icon">
                           <i className="icofont-rounded-down"></i>
@@ -175,33 +352,36 @@ const CartPage = () => {
                       <input
                         type="text"
                         name="PostalCode"
-                        placeholder="Mã bưu điện
-"
+                        placeholder="Mã bưu điện"
                         className="cart-page-input-text"
                       />
-                      <button className="btn" type="submit">Cập nhật địa chỉ</button>
+                      <button className="btn" type="submit">
+                        Cập nhật địa chỉ
+                      </button>
                     </div>
                   </div>
 
                   {/* right */}
                   <div className="col-md-6 col-12">
-                        <div className="cart-overview">
-                            <h3>Tổng chi phí</h3>
-                            <ul className="lab-ul">
-                                <li>
-                                    <span className="pull-left">Tổng thanh toán</span>
-                                    <span className="pull-right">{cartSubTitle}.000VNĐ</span>
-                                </li>
-                                <li>
-                                    <span className="pull-left">Chi phí vận chuyển</span>
-                                    <span className="pull-right">Miễn phí</span>
-                                </li>
-                                <li>
-                                    <span className="pull-left">Thành tiền</span>
-                                    <span className="pull-right">{orderTotal.toFixed(3)}VNĐ</span>
-                                </li>
-                            </ul>
-                        </div>
+                    <div className="cart-overview">
+                      <h3>Tổng chi phí</h3>
+                      <ul className="lab-ul">
+                        <li>
+                          <span className="pull-left">Tổng thanh toán</span>
+                          <span className="pull-right">
+                            {cartSubTitle()}.000VNĐ
+                          </span>
+                        </li>
+                        <li>
+                          <span className="pull-left">Chi phí vận chuyển</span>
+                          <span className="pull-right">Miễn phí</span>
+                        </li>
+                        <li>
+                          <span className="pull-left">Thành tiền</span>
+                          <span className="pull-right">{orderTotal}VNĐ</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>

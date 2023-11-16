@@ -4,9 +4,8 @@ import logo from "../assets/images/logo/logo1.jpg";
 import { AuthContext } from "../context/AuthProvider";
 import { Modal } from "react-bootstrap"; // Import Modal from react-bootstrap
 
-
 const NavItems = () => {
-  const { user, logout} = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   const [menuToggle, setMenuToggle] = React.useState(false);
   const [socialToggle, setSocialToggle] = React.useState(false);
   const [headerFixed, setHeaderFixed] = React.useState(false);
@@ -19,6 +18,14 @@ const NavItems = () => {
       setHeaderFixed(false);
     }
   });
+
+  const handleSocialToggle = () => {
+    setSocialToggle(!socialToggle);
+    setTimeout(() => {
+      setSocialToggle(false);
+    }, 3000);
+    
+  }
 
   const handleClick = () => {
     setMenuToggle(!menuToggle);
@@ -98,21 +105,46 @@ const NavItems = () => {
             {/* menu */}
             <div className="menu-area">
               <div className="menu">
-                <ul className={`lab-ul ${menuToggle ? "active" : ""}`} style={{color: "black", fontWeight:300}}>
-                  <li >
-                    <Link style={{color: "black", fontWeight:400}} to="/">Trang chủ</Link>
+                <ul
+                  className={`lab-ul ${menuToggle ? "active" : ""}`}
+                  style={{ color: "black", fontWeight: 300 }}
+                >
+                  <li>
+                    <Link style={{ color: "black", fontWeight: 400 }} to="/">
+                      Trang chủ
+                    </Link>
                   </li>
                   <li>
-                    <Link style={{color: "black", fontWeight:400}} to="/shop">Sản phẩm</Link>
+                    <Link
+                      style={{ color: "black", fontWeight: 400 }}
+                      to="/shop"
+                    >
+                      Sản phẩm
+                    </Link>
                   </li>
                   <li>
-                    <Link style={{color: "black", fontWeight:400}} to="/blog">Blog</Link>
+                    <Link
+                      style={{ color: "black", fontWeight: 400 }}
+                      to="/blog"
+                    >
+                      Blog
+                    </Link>
                   </li>
                   <li>
-                    <Link style={{color: "black", fontWeight:400}} to="/about">Về chúng tôi</Link>
+                    <Link
+                      style={{ color: "black", fontWeight: 400 }}
+                      to="/about"
+                    >
+                      Về chúng tôi
+                    </Link>
                   </li>
                   <li>
-                    <Link style={{color: "black", fontWeight:400}} to="/contact">Liên hệ</Link>
+                    <Link
+                      style={{ color: "black", fontWeight: 400 }}
+                      to="/contact"
+                    >
+                      Liên hệ
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -121,9 +153,8 @@ const NavItems = () => {
               {user && window.innerWidth > 991 ? (
                 <>
                   {/* Hiển thị menu đăng nhập */}
-                  {
-                    user.photoURL ? (
-                      <img
+                  {user.photoURL ? (
+                    <img
                       src={user.photoURL}
                       alt={user.displayName || user.email}
                       style={{
@@ -132,7 +163,7 @@ const NavItems = () => {
                         borderRadius: "50%",
                       }}
                     />
-                    ):(
+                  ) : (
                     <img
                       src="https://cdn-icons-png.flaticon.com/512/8792/8792047.png"
                       style={{
@@ -141,12 +172,9 @@ const NavItems = () => {
                         borderRadius: "50%",
                       }}
                     />
-                  )
-                  }
+                  )}
                 </>
-              ) : (
-                  null
-                )}
+              ) : null}
 
               {/* menu-toggle */}
               <div
@@ -162,9 +190,7 @@ const NavItems = () => {
               {/* socials toggle */}
               <div
                 className="ellipsis-bar d-md-none"
-                onClick={() => {
-                  setSocialToggle(!socialToggle);
-                }}
+                onClick={handleSocialToggle}
               >
                 {user ? (
                   user.photoURL ? (
@@ -191,17 +217,11 @@ const NavItems = () => {
                   <i className="icofont-user"></i>
                 )}
               </div>
-              
-              
             </div>
             {/* modal */}
-            
-
-
           </div>
         </div>
       </div>
-      
     </header>
   );
 };
