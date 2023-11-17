@@ -2,7 +2,7 @@ const blogList = [
   {
     id: 1,
     imgUrl:
-      "https://document-export.canva.com/7Kb6M/DAFz687Kb6M/3/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20231112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231112T001632Z&X-Amz-Expires=91813&X-Amz-Signature=f919be4c4d522e029d47e142acbc37da05a02494c95fd6032a525e06862a120d&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2013%20Nov%202023%2001%3A46%3A45%20GMT",
+      "https://document-export.canva.com/7Kb6M/DAFz687Kb6M/3/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20231117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231117T001632Z&X-Amz-Expires=12613&X-Amz-Signature=a688485ee74776bcea11f0603bee0306636391b00c8c1ea4cac8d20ed21f9023&X-Amz-SignedHeaders=host&response-expires=Fri%2C%2017%20Nov%202023%2003%3A46%3A45%20GMT",
     imgAlt: "Blog Thumb",
     title: "Vdevshop khai trương shop mọi sản phẩm",
     desc: "Mặt hàng shop vừa nhập về đều là hàng mới, chất lượng mang đến niềm vui cho mọi người",

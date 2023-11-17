@@ -146,6 +146,11 @@ const NavItems = () => {
                       Liên hệ
                     </Link>
                   </li>
+                  <li>
+                    <Link to="/infor" style={{color: "black", fontWeight: 400,}}>
+                        Thông tin
+                    </Link>
+                  </li>
                 </ul>
               </div>
 

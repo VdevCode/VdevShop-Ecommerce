@@ -24,6 +24,8 @@ const Shop = () => {
     IndexOfLastProduct
   );
 
+
+
   const paginate = (pagenumber) => {
     setCurrentPage(pagenumber);
   };
@@ -38,6 +40,7 @@ const Shop = () => {
     setSelectCategort(curcat);
     setProducts(newItems);
   };
+
 
 
   return (

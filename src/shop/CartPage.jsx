@@ -32,6 +32,7 @@ const CartPage = () => {
       });
   }, []);
 
+    console.log(provinces);
 
   useEffect(() => {
     if (selectedProvince) {
