@@ -8,11 +8,26 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  FacebookAuthProvider,
+  GithubAuthProvider,
+  TwitterAuthProvider
 } from "firebase/auth";
 
 export const AuthContext = createContext();
 const auth = getAuth();
+auth.languageCode = 'it';
+
 const googleProvider = new GoogleAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
+const githubProvider = new GithubAuthProvider();
+const twitterProvider = new TwitterAuthProvider();
+// githubProvider.addScope('repo');
+
+// githubProvider.setCustomParameters({
+//   'allow_signup': 'false'
+// });
+
+console.log(twitterProvider)
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = React.useState(null);
@@ -29,11 +44,31 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
+    // Đăng ký bằng facebook
+  const signUpWithFacebook = (email, password) => {
+    setLoading(true);
+    return signInWithPopup(auth, facebookProvider);
+  }
+
+  // Đăng ký bằng github
+
+  const signUpWithGithub = (email, password) => {
+      setLoading(true);
+      return signInWithPopup(auth, githubProvider);
+  }
+    // Đăng ký bằng twitter
+
+  const signInWithTwitter = (email, password) => {
+      setLoading(true)
+      return signInWithPopup(auth, twitterProvider)
+  }
+
   // Đăng nhập
   const login = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
+
 
   // Đăng xuất
   const logout = () => {
@@ -58,8 +93,11 @@ const AuthProvider = ({ children }) => {
     loading,
     createUser,
     signUpWithGmail,
+    signUpWithFacebook,
     login,
     logout,
+    signUpWithGithub,
+    signInWithTwitter
   };
 
   return (

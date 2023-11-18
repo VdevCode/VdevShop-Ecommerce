@@ -1,6 +1,7 @@
 import React from "react"
 import PageHeader from "/src/components/PageHeader.jsx"
 
+
 const Infor = () => {
 	return (
 		<div>
