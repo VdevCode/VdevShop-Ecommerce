@@ -66,7 +66,10 @@ const NavItems = () => {
                   Đăng xuất
                 </button>
                 {/* Hiển thị thông tin người dùng */}
-                {user.email && <span>{user.email}</span>}
+                {
+                  // user.reloadUserInfo.screenName && <span>{user.reloadUserInfo.screenName}</span>
+                  user.displayName && <span>{user.displayName}</span>
+                }
               </>
             ) : (
               <>
@@ -119,7 +122,7 @@ const NavItems = () => {
                       style={{ color: "black", fontWeight: 400 }}
                       to="/shop"
                     >
-                      Sản phẩm
+                      Sản Phẩm
                     </Link>
                   </li>
                   <li>
@@ -144,6 +147,11 @@ const NavItems = () => {
                       to="/contact"
                     >
                       Liên hệ
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/infor" style={{color: "black", fontWeight: 400,}}>
+                        Thông tin
                     </Link>
                   </li>
                 </ul>

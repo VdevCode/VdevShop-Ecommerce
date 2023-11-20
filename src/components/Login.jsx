@@ -15,7 +15,7 @@ const socialList = [
 ];
 const Login = () => {
   const [errorMessege, setErrorMessege] = React.useState("");
-  const { signUpWithGmail, login } = useContext(AuthContext);
+  const { signUpWithGmail, login , signUpWithFacebook,signUpWithGithub , signInWithTwitter} = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -25,7 +25,6 @@ const Login = () => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
-    console.log(email);
     const password = form.password.value;
     console.log(password);
     login(email, password).then((result) => {
@@ -38,17 +37,53 @@ const Login = () => {
         setErrorMessege("Sai email hoặc mật khẩu rồi, hoặc bạn chưa tạo tài khoản.");
     })
   };
-
   const handleRegister = () => {
+          console.log("login gmail")
       signUpWithGmail().then((result) => {
         const user = result.user;
         navigate(from, { replace: true });
-        console.log(user);
       }).catch((error) => {
         const errorMsg = error.message
         setErrorMessege(errorMsg);
       })
   }
+
+
+  const handleFacebook = () => {
+        console.log("login facebook")
+        signUpWithFacebook().then((result) => {
+        const user = result.user;
+        navigate(from, { replace: true });
+      }).catch((error) => {
+        const errorMsg = error.message
+        setErrorMessege(errorMsg);
+        
+      })
+  }
+
+
+  const handleGithub = () => {
+        console.log("login github")
+        signUpWithGithub().then((result) => {
+        const user = result.user;
+        navigate(from, { replace: true });
+      }).catch((error) => {
+        const errorMsg = error.message
+        setErrorMessege(errorMsg);
+      })  
+    }
+
+
+    const handleApple = () => {
+        console.log("login twitter")
+        signInWithTwitter().then((result) => {
+        const user = result.user;
+        navigate(from, { replace: true });
+      }).catch((error) => {
+        const errorMsg = error.message
+        setErrorMessege(errorMsg);
+      })  
+    }
 
   return (
     <div className="">
@@ -118,31 +153,21 @@ const Login = () => {
                   <i className="icofont-google-plus"></i>
                   </button>
                 </li>
-                {/* <li>
-                  <a href="#"  className="twitter">
-                    <i className="icofont-twitter"></i>
-                  </a>
+                  <li>
+                  <button className="github" onClick={handleFacebook} style={{background:"blue",}}>
+                 <i className="icofont-facebook"></i>
+                  </button>
+                </li>
+                 <li>
+                  <button className="github" onClick={handleGithub} style={{background:"black",}}>
+                  <i className="icofont-github"></i>
+                  </button>
                 </li>
                 <li>
-                  <a href="#"  className="linkedin">
-                    <i className="icofont-linkedin"></i>
-                  </a>
+                  <button className="github" onClick={handleApple} style={{background:"#00a6ff",}}>
+                  <i className="icofont-twitter"></i>
+                  </button>
                 </li>
-                <li>
-                  <a href="#"  className="instagram">
-                    <i className="icofont-instagram"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#"  className="pinterest">
-                    <i className="icofont-pinterest"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#"   className="google-plus">
-                    <i className="icofont-google-plus"></i>
-                  </a>
-                </li> */}
               </ul>
             </div>
           </div>
