@@ -93,7 +93,6 @@ const ProductDisplay = ({ item }) => {
         <p className="rating align-items-center d-flex">
           {stars}
           <span>
-            {" "}
             {Math.floor(Math.random(ratingsCount) * (max - min + 1)) + min} Đánh
             giá
           </span>

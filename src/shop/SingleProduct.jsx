@@ -18,6 +18,7 @@ const SingleProduct = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    // fetch("https://rnmnwz-3000.csb.app/product")
     fetch("https://rnmnwz-3000.csb.app/product") // Sử dụng đường dẫn tương đối
       .then((res) => res.json())
       .then((data) => setProduct(data))

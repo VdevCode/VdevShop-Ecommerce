@@ -47,7 +47,7 @@ const SingleBlog = () => {
                                 <p>Cuộc sống chỉ có 1 lần, hãy mua hàng của Vdevshop ngay khi còn có thể.</p>
                                 <cite>{item.metaList[0].text}</cite>
                               </blockquote>
-                              <img src="https://document-export.canva.com/YPftU/DAFtjhYPftU/5/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20231112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231112T105517Z&X-Amz-Expires=52952&X-Amz-Signature=3f7d41fd111f0cd8db45c8ec71efc2500fb6ccedc2feaf8e61596903bf3b61ee&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2013%20Nov%202023%2001%3A37%3A49%20GMT" />
+                              <img src="https://document-export.canva.com/rJ2E8/DAFzKIrJ2E8/1/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20231118%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231118T134342Z&X-Amz-Expires=41337&X-Amz-Signature=2cedf6ae9d90c64fc28ebd92977d29326fcc618ec98c2d5d08136d2dc72a54bb&X-Amz-SignedHeaders=host&response-expires=Sun%2C%2019%20Nov%202023%2001%3A12%3A39%20GMT" />
                               <div className="video-thumb">
                                 <img src="https://document-export.canva.com/RLtu0/DAFtjsRLtu0/2/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20231112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231112T173012Z&X-Amz-Expires=29089&X-Amz-Signature=240d6eca089b4947b8278473c9d78ea8e2e28da834fbfa00051751bc47ac259c&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2013%20Nov%202023%2001%3A35%3A01%20GMT" />
                               </div>

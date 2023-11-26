@@ -7,6 +7,7 @@ import Search from "./Search";
 import ShopCategory from "./ShopCategory";
 import PopularPost from "./PopularPost";
 import Tags from "./Tags";
+import FilterProduct from "./FilterProduct";
 
 const showResults = `Hiển thị 01 - 12 trong ${DataProduct.product.length} sản phẩm`;
 
@@ -23,7 +24,6 @@ const Shop = () => {
     IndexOfFirstProduct,
     IndexOfLastProduct
   );
-
 
 
   const paginate = (pagenumber) => {
@@ -67,6 +67,8 @@ const Shop = () => {
                     </a>
                   </div>
                 </div>
+
+                <FilterProduct />
 
                 <div className="">
                   <ProductCard GridList={GridList} products={currentProducts} />

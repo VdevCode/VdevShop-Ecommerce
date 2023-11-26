@@ -39,11 +39,11 @@ const About = () => {
             <div className="col">
               <div className="about-left">
                 <div className="about-thumb">
-                  <img src="https://document-export.canva.com/C5JaI/DAFz7IC5JaI/2/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20231112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231112T204622Z&X-Amz-Expires=43497&X-Amz-Signature=93e3a894ee14db242aea5507813332553974c5ad922915fe20127cfd4c87a003&X-Amz-SignedHeaders=host&response-expires=Mon%2C%2013%20Nov%202023%2008%3A51%3A19%20GMT" alt="about" />
+                  <img src="https://document-export.canva.com/7Kb6M/DAFz687Kb6M/3/thumbnail/0001.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWDTJW6UD%2F20231120%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231120T001632Z&X-Amz-Expires=91813&X-Amz-Signature=c614a0a8f2b91a17926ccfc63debe4d3908186ffd97f25f87d697b6fb66e3031&X-Amz-SignedHeaders=host&response-expires=Tue%2C%2021%20Nov%202023%2001%3A46%3A45%20GMT" alt="about" />
                 </div>
-                <div className="abs-thumb">
+             {/*   <div className="abs-thumb">
                   <img src="/src/assets/images/about/01.png" alt="about" />
-                </div>
+                </div>*/}
                 <div className="about-left-content">
                   <h3>{expareance}</h3>
                   <p>{year}</p>

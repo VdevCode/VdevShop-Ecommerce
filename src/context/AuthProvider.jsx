@@ -26,9 +26,6 @@ const twitterProvider = new TwitterAuthProvider();
 // githubProvider.setCustomParameters({
 //   'allow_signup': 'false'
 // });
-
-console.log(twitterProvider)
-
 const AuthProvider = ({ children }) => {
   const [user, setUser] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
